@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: interactiontigerspace
+        psr4_prefix: interactiontigerspace
+        src_path: app

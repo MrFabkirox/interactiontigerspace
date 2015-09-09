@@ -1,0 +1,13 @@
+#left {
+	width: 75%;
+	position: fixed;
+}
+
+#right {
+	width: 25%;
+	position: absolute;
+	right: 0;
+	background: grey;
+	margin: 20px;
+	padding: 4px;
+}
