@@ -15,7 +15,7 @@
 <body>
 
 
-<div id="right"> @include('menu') </div>
+<div id="right"> @include('menul') </div>
 	
 <div id="left">
 
@@ -28,6 +28,7 @@
 	@endif
 
 	{{ $age }}<br />
+	
 	<?php echo $location; ?><br />
 	<?php echo $specialty; ?><br />
 

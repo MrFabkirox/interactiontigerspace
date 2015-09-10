@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/page1', 'Page1Controller@p1');
+Route::get('/page1', array('uses' => 'Page1Controller@p1'));
 
 Route::get('/page2', 'Page2Controller@p2');
 Route::post('/page2', 'Page2Controller@postp2');

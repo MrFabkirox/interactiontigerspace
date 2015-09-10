@@ -15,21 +15,13 @@
 <body>
 
 
-<div id="right"> @include('menu') </div>
+<div id="right"> @include('menul') </div>
 	
 <div id="left">
 
 	<h2 style="color: #FFAA88;">welcome to page 1 !</h2>
 
-	@if(isset( $name ))
-		{{ $name }}<br />
-	@else
-		No name given
-	@endif
-
-	{{ $age }}<br />
-	<?php echo $location; ?><br />
-	<?php echo $specialty; ?><br />
+	@yield('content')
 
 </div>
 

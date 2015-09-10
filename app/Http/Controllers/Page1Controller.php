@@ -5,15 +5,19 @@
 namespace interactiontigerspace\Http\Controllers;
 
 
-class Page1Controller extends Controller
+class Page1Controller extends Controller {
 
-{
+	public $restful = true;
 
-	public function p1()
-	{
+	public function p1() {
 
 		//instead of View::make() in L5 you can call view() as a function
-		return view('page1');
+		$view = view('page1.page1', array('name' => 'fabrice'))
+			->with('age' , '33') ;
+		$view->location = 'Paris';
+		$view['specialty'] = 'php';
+
+		return $view;
 	}
 
 }
