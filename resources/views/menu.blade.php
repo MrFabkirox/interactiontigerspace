@@ -12,7 +12,7 @@
 
 </head>
 <body>
-	<h3>laravel3, menu</h3>
+	<h3>Interaction Tiger Space</h3>
 
 <ul style="list-style-type:none;">
 	<li><a href="http://interactiontigerspace.herokuapp.com/page1">page1</a></li>
