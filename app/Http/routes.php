@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', 'FormController@showForm');
-Route::post('/', 'FormController@postForm');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/page1', 'Page1Controller@p1');
 
@@ -27,6 +28,5 @@ Route::get('/page4', function () {
     return view('page4');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/formcontroller/', 'FormController@showForm');
+Route::post('/formcontroller/', 'FormController@postForm');

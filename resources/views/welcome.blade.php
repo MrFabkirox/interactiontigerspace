@@ -39,7 +39,7 @@
     <body>
 
 
-<div id="right"> @include('menul') </div>
+<div id="right"> @include('menu') </div>
     
 <div id="left">
 
