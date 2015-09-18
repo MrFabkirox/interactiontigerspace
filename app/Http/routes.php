@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'as' => 'home',
+	'uses' => 'HomeController@index'
+]);
 
 Route::get('/page1', array('uses' => 'Page1Controller@p1'));
 
