@@ -12,7 +12,7 @@
 
 </head>
 <body>
-	<h3>Interaction Tiger Space</h3>
+	<h3>Tiger Menu</h3>
 
 <ul style="list-style-type:none;">
 	<li><a href="http://interactiontigerspace.herokuapp.com/">welcome</a></li>	
