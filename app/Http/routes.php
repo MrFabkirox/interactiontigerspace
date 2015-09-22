@@ -28,6 +28,3 @@ Route::get('/page3', function () {
 Route::get('/page4', function () {
     return view('page4');
 });
-
-Route::get('/formcontroller/', 'FormController@showForm');
-Route::post('/formcontroller/', 'FormController@postForm');
