@@ -13,7 +13,7 @@
           </p>
           <div class="jumbotron">
             <h1>Welcome,</h1>
-            <p><img class="TextWrap1" src="/img/fab.jpg" alt="Fabrice Esope" >Due to my current interrest to php and the laravel5 framework, i have created this space to lay down some idea and practice to improve, learn, and why not create some great project and have interract with people and environment.<br />
+            <p><img class="TextWrap1" src="/img/fab.jpg" alt="Fabrice Esope" >Due to my current interrest to php and the laravel5 framework, i have created this space to lay down some ideas and practice to improve, learn. This will be a great way to explore some new opportunities for great new project, and meet new great people and environment i am sure.<br />
             	Don't hesitate to reach me out on <a href="http://www.viadeo.com/profile/0021ovjeecl5pbnk">Viadeo</a> if anything.</p>
           </div>
           <div class="row">
