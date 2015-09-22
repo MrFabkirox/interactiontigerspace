@@ -4,10 +4,11 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="img/favicontiger1.png">
 	<title>Interaction Tiger Space</title>
 
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    
+
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!--<link rel="stylesheet" type="text/css" href="/css/style.css"> -->
