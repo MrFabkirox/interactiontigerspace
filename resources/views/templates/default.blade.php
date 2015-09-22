@@ -1,6 +1,6 @@
 @include('templates.partials.header')
 
-	<div id="left">
+	<div>
 
 	@yield('content')
 
