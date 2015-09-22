@@ -14,7 +14,7 @@
           <div class="jumbotron">
             <h1>Welcome,</h1>
             <p>Due to my current interrest to php and the laravel5 framework, i have created this space to lay down some idea and practice to improve, learn, and why not create some great project and have interract with people and environment.<br />
-            	Don't hesitate to reach me out on <a href="https://www.linkedin.com/profile/view?id=AAMAAAeHEDsBDR-tIYH2nuNoqoS8gFLPjZNR878&trk=hp-identity-name">LinkedIn</a> if anything.</p>
+            	Don't hesitate to reach me out on <a href="http://www.viadeo.com/profile/0021ovjeecl5pbnk">Viadeo</a> if anything.</p>
           </div>
           <div class="row">
             <div class="col-xs-6 col-lg-4">
