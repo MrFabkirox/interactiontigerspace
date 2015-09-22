@@ -6,10 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Interaction Tiger Space</title>
 
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-    <!--<link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
+    <!--<link rel="stylesheet" type="text/css" href="/css/style.css"> -->
 
 <script>	
 </script>
