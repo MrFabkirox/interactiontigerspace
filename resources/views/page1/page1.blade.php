@@ -21,21 +21,20 @@
               <h2></h2>
               
             	@if(isset( $name ))
-					{{ $name }}<br />
-				@else
-					No name given
-				@endif
+                {{ $name }}<br />
+				      @else
+                No name given
+				      @endif
 
-				{{ $age }}<br />
+				      {{ $age }}<br />
 		
-				<?php echo $location; ?><br />
-				<?php echo $specialty; ?><br />
+				      <?php echo $location; ?><br />
+				      <?php echo $specialty; ?><br />
 
-			</div><!--/.col-xs-6.col-lg-4-->
+            </div><!--/.col-xs-6.col-lg-4-->
             
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
-
 
 
 @stop

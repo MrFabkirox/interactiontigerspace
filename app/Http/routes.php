@@ -25,6 +25,31 @@ Route::get('/page3', function () {
     return view('page3');
 });
 
-Route::get('/page4', function () {
-    return view('page4');
-});
+Route::get('/page4', [
+	'as' => 'page4',
+	'uses' => 'Page4Controller@p4'
+]);
+
+Route::get('/page4view/{id}', [
+	'as' => 'user',
+	'uses' => 'Page4Controller@viewuser'
+]);
+
+Route::get('/page4new', [
+	'as' => 'newuser',
+	'uses' => 'Page4Controller@newuser'
+]);
+
+Route::post('/page4create', [
+	'uses' => 'Page4Controller@createuser'
+]);
+
+Route::get('/page4edit/{id}', [
+	'as' => 'editauthor',
+	'uses' => 'Page4Controller@editauthor'
+]);
+
+Route::put('/page4update', [
+	'as' => 'updateauthor',
+	'uses' => 'Page4Controller@updateauthor'
+]);

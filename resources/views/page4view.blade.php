@@ -18,22 +18,19 @@
            
             <div class="col-xs-6 col-lg-4">
               
-              We will retreive data here:<br />
-              <!--echo user::all(); ko-->
+              Authors and bio.<br />
               <p>
 
-                <ul>
-                @foreach ($authors as $a)
+                Name: {{ $author->name }}<br />
 
-                  <li><a href='http://localhost:8000/page4view/{{ $a->id }}'>{{ $a->name }}</a></li>
-
-                @endforeach 
-                </ul>
+                Bio: {{ $author->bio }}
 
               </p>
-                <a href='http://localhost:8000/page4new'>Add a new Author</a>
-              <p>
 
+              <p>
+                {!! HTML::linkRoute('home', 'home', array('target'=>'blank')) !!}<br />
+                <a href='http://localhost:8000/page4'>Back to Authors</a><br />
+                <a href='http://localhost:8000/page4edit/{{ $author->id }}'>Edit this author</a><br />
               </p>
 
             </div><!--/.col-xs-6.col-lg-4-->

@@ -12,27 +12,34 @@
           </p>
           <div class="jumbotron">
             <h1>Database</h1>
-            <p>Let s play with the MySql database.</p>
+            <p>Insert new data in the MySql database.</p>
             </div>
           <div class="row">
            
             <div class="col-xs-6 col-lg-4">
               
-              We will retreive data here:<br />
-              <!--echo user::all(); ko-->
+              Insert new data:<br />
               <p>
 
-                <ul>
-                @foreach ($authors as $a)
+                {{ render('common.author_errors') }}
 
-                  <li><a href='http://localhost:8000/page4view/{{ $a->id }}'>{{ $a->name }}</a></li>
+                {!! Form::open(array('url' => 'page4create', 'method' => 'POST')) !!}
+                
+                <p>
+                {!! Form::label('name', 'Name:') !!}
+                {!! Form::text('name') !!}
+                </p>
 
-                @endforeach 
-                </ul>
+                <p>
+                {!! Form::label('bio', 'Biography:') !!}
+                {!! Form::textarea('bio') !!}
+                </p>
 
-              </p>
-                <a href='http://localhost:8000/page4new'>Add a new Author</a>
-              <p>
+                <p>
+                {!! Form::submit('Add Author') !!}
+                </p>
+
+                {!! Form::close() !!}
 
               </p>
 

@@ -1,6 +1,6 @@
 <?php
 
-// /var/www/html/laravel3/app/Http/Controllers
+// /var/www/html/laravel3/app/Http/Controllers/Page1Controller.php
 
 namespace interactiontigerspace\Http\Controllers;
 
