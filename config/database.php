@@ -69,7 +69,7 @@ return [
             'host'     => env('DB_HOST', 'ec2-54-204-40-96.compute-1.amazonaws.com'),
             'database' => env('DB_DATABASE', 'dbrj48k143k56g'),
             'username' => env('DB_USERNAME', 'pmzuifljjkratd'),
-            'password' => env('DB_PASSWORD', 'user1'),
+            'password' => env('DB_PASSWORD', 'TTJ12vZP0X9Lgjl_FHOXzEFJSp'),
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
