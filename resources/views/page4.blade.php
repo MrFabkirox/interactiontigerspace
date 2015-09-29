@@ -28,7 +28,7 @@
                 </ul>
 
               </p>
-                <a href='http://localhost:8000/page4new'>Add a new Author</a>
+                <a href='http://interactiontigerspace.herokuapp.com/page4new'>Add a new Author</a>
               <p>
 
               </p>
