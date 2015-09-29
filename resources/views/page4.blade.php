@@ -18,7 +18,7 @@
            
             <div class="col-xs-6 col-lg-4">
               
-              We will retreive data here of the manager id {{ $authors[0]->id }}:<br />
+              We will retreive data here of the all the authors. {{ $authors[0]->id }}<br />
               <p>
 
                 <ul>
