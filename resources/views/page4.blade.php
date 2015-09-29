@@ -18,15 +18,12 @@
            
             <div class="col-xs-6 col-lg-4">
               
-              We will retreive data here:<br />
-              <!--echo user::all(); ko-->
+              We will retreive data here of the manager id {{ $authors[0]->id }}:<br />
               <p>
 
                 <ul>
                 @foreach ($authors as $a)
-                  ---{!! URL::route('user', array('id'=>1)) !!}---<br />
-                  <li><a href='http://interactiontigerspace.herokuapp.com/page4view/{{ $a->id }}'>{{ $a->name }}</a></li>
-                  <!--<li><a href='http://localhost:8000/page4view/{{ $a->id }}'>{{ $a->name }}</a></li>-->
+                  <li><a href='{!! URL::route("user", array("id"=> "{{ $a->id }}" )) !!}'>{{ $a->name }}</a></li>
 
                 @endforeach 
                 </ul>

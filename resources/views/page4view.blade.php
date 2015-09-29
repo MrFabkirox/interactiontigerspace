@@ -28,7 +28,13 @@
               </p>
 
               <p>
-                {!! HTML::linkRoute('home', 'home', array('target'=>'blank')) !!}<br />
+              <ul>
+                <li><a href='{!! URL::route("page4") !!}'>page4</a></li>
+                <li><a href='{!! URL::route("user", array("id"=> "{{ $author->id }}" )) !!}'>{{ $a->name }}</a></li>
+                <li><a href='{!! URL::route("editauthor", array("id"=> "{{ $author->id }}" )) !!}'>Edit this author laravel way</a></li>
+                <li><a href='http://localhost:8000/page4edit/{{ $author->id }}'>Edit this author html basic</a></li>
+              </ul>
+
                 <a href='http://localhost:8000/page4'>Back to Authors</a><br />
                 <a href='http://localhost:8000/page4edit/{{ $author->id }}'>Edit this author</a><br />
               </p>
