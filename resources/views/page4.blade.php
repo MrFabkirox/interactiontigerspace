@@ -23,8 +23,7 @@
 
                 <ul>
                 @foreach ($authors as $a)
-                  <li><a href='{!! URL::route("user", array("id"=> "{{ $a->id }}" )) !!}'>{{ $a->name }}</a></li>
-
+                  <li><a href='{!! URL::route("user", array("id"=> "{$a->id}" )) !!}'>{{ $a->name }}</a></li>
                 @endforeach 
                 </ul>
 

@@ -20,23 +20,18 @@
               
               Authors and bio.<br />
               <p>
-
+                <p>
                 Name: {{ $author->name }}<br />
-
+                </p>
+                <p>
                 Bio: {{ $author->bio }}
-
+                </p>
               </p>
 
               <p>
-              <ul>
-                <li><a href='{!! URL::route("page4") !!}'>page4</a></li>
-                <li><a href='{!! URL::route("user", array("id"=> "{{ $author->id }}" )) !!}'>{{ $a->name }}</a></li>
-                <li><a href='{!! URL::route("editauthor", array("id"=> "{{ $author->id }}" )) !!}'>Edit this author laravel way</a></li>
-                <li><a href='http://localhost:8000/page4edit/{{ $author->id }}'>Edit this author html basic</a></li>
-              </ul>
-
-                <a href='http://localhost:8000/page4'>Back to Authors</a><br />
-                <a href='http://localhost:8000/page4edit/{{ $author->id }}'>Edit this author</a><br />
+              
+                <a href='{!! URL::route("editauthor", array("id"=> "{$author->id}" )) !!}'>Edit this author</a>.
+                
               </p>
 
             </div><!--/.col-xs-6.col-lg-4-->
