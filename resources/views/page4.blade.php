@@ -12,7 +12,7 @@
           </p>
           <div class="jumbotron">
             <h1>Database</h1>
-            <p>Let s play with the MySql database.</p>
+            <p>Switching from the MySql database of Laravel5 to the PostgreSQL of Heroku.</p>
             </div>
           <div class="row">
            
