@@ -63,7 +63,7 @@ return [
             'prefix'    => '',
             'strict'    => false,
         ],
-
+        //*/
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'ec2-54-204-40-96.compute-1.amazonaws.com'),
@@ -74,7 +74,19 @@ return [
             'prefix'   => '',
             'schema'   => 'public',
         ],
-
+        //*/
+        /*/                local
+        'pgsql' => [
+            'driver'   => 'pgsql',
+            'host'     => env('DB_HOST', 'localhost'),
+            'database' => env('DB_DATABASE', 'database1'),
+            'username' => env('DB_USERNAME', 'user1'),
+            'password' => env('DB_PASSWORD', 'user1'),
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
+        ],
+        //*/
         'sqlsrv' => [
             'driver'   => 'sqlsrv',
             'host'     => env('DB_HOST', 'localhost'),

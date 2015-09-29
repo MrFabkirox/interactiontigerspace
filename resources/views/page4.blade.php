@@ -24,8 +24,9 @@
 
                 <ul>
                 @foreach ($authors as $a)
-
-                  <li><a href='http://localhost:8000/page4view/{{ $a->id }}'>{{ $a->name }}</a></li>
+                  ---{!! URL::route('user', array('id'=>1)) !!}---<br />
+                  <li><a href='http://interactiontigerspace.herokuapp.com/page4view/{{ $a->id }}'>{{ $a->name }}</a></li>
+                  <!--<li><a href='http://localhost:8000/page4view/{{ $a->id }}'>{{ $a->name }}</a></li>-->
 
                 @endforeach 
                 </ul>
