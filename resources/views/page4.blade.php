@@ -28,7 +28,7 @@
                 </ul>
 
               </p>
-                <a href='http://interactiontigerspace.herokuapp.com/page4new'>Add a new Author</a>
+                <a href='{!! URL::route("newuser") !!}'>Add a new Author</a>
               <p>
 
               </p>

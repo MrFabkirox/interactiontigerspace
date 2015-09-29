@@ -21,8 +21,6 @@
               Insert new data:<br />
               <p>
 
-                {{ render('common.author_errors') }}
-
                 {!! Form::open(array('url' => 'page4create', 'method' => 'POST')) !!}
                 
                 <p>
