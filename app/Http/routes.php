@@ -49,7 +49,7 @@ Route::get('/page4edit/{id}', [
 	'uses' => 'Page4Controller@editauthor'
 ]);
 
-Route::put('/page4update', [
+Route::put('/page4update/{id}', [
 	'as' => 'updateauthor',
 	'uses' => 'Page4Controller@updateauthor'
 ]);
