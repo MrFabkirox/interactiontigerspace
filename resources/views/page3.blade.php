@@ -12,7 +12,8 @@
           </p>
           <div class="jumbotron">
             <h1>Blade Layout</h1>
-            <p>Page 3, this is a layout blade php with if session get('Message')</p>
+            <p>Page 3, this is a layout blade php.<br />
+            Blade is a templating engine provided with Laravel. Unlike controller layouts, Blade is driven by template inheritance and sections. All Blade templates should use the .blade.php extension.</p>
             </div>
           <div class="row">
            

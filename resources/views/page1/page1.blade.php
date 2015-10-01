@@ -12,7 +12,8 @@
           </p>
           <div class="jumbotron">
             <h1>Variables</h1>
-            <p>Page 1, different ways to give back variables from the controller</p>
+            <p>4 different ways to give back variables from the controller. <br />
+            To be used soon to make more interresting things here.</p>
             </div>
           <div class="row">
            
