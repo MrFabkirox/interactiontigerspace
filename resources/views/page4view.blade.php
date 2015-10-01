@@ -30,7 +30,8 @@
 
               <p>
                 <a href='{!! URL::route("page4") !!}'>Back to the authors list</a>.<br />
-                <a href='{!! URL::route("editauthor", array("id"=> "{$author->id}" )) !!}'>Edit this author</a>.
+                <a href='{!! URL::route("editauthor", array("id"=> "{$author->id}" )) !!}'>Edit this author</a>.<br />
+                <a href='{!! URL::route("deleteauthor", array("id"=> "{$author->id}" )) !!}'>Delete this author</a>.<br />
                 
               </p>
 

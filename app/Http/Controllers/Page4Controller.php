@@ -11,7 +11,7 @@ use DB;
 use HTML;
 use Input;
 use Redirect;
-use stdClass;
+use Recruit;
 
 class Page4Controller extends Controller {
 
@@ -21,18 +21,7 @@ class Page4Controller extends Controller {
 
 		$authors = DB::table('authors')->get();
 		DB::disconnect('authors');
-
-		//return $users;
-
-		/*$users = DB::table('user1')->where('name', '!=', 'fab')->get();
-		return $users;*/
-
-		//$users = DB::table('user1')->find(1);//return an object
-		//dd($users); // die(var_dump($users)};
-		//return $users->name;
-
-		//return view('page4', ['usr'=> $users]);
-
+		
 		return view('page4')
 			->with('title', 'Some db stuff')
 			->with('authors', $authors);
@@ -58,9 +47,18 @@ class Page4Controller extends Controller {
 			return Redirect::to_route('newuser')->with_errors($validation)
 				->with_input();
 		} else {
-			authors::create(array(
-				'name' =>Input::get('name')
+			//authors::create(array(
+			//	'name' =>Input::get('name')
+			//));
+			DB::table('authors')->insertGetId(array(
+				'name' => Input::get('name'),
+				'bio' => Input::get('bio')
 			));
+
+		$authors = DB::table('authors')->get();
+
+		return view('page4')
+			->with('authors', $authors);
 		}
 	}
 
@@ -74,10 +72,9 @@ class Page4Controller extends Controller {
 
 	}
 
-	public function updateauthor() {
-		$id = Input::get('id');
-		$author = DB::table('authors')->find($id);//return an object
-		DB::disconnect('authors');
+	public function updateauthor($id) {
+		//$id = Input::get('id');
+		$authornew = DB::table('authors')->find($id);//return an object
 
 		$validation = authors::validate(Input::all());
 
@@ -85,14 +82,26 @@ class Page4Controller extends Controller {
 			return Redirect::to_route('newuser')->with_errors($validation)
 				->with_input();
 		} else {
-			//authors::update($id, array(
-				$author->name = Input::get('name');
-				$author->bio = Input::get('bio');
-				$author->save();
-			//));
+			$authornew = DB::update('update authors set name = ?', ['john']);
+			
 
-			return Redirect::to_route('page4');
+			DB::disconnect('authors');
+
+		return view('page4')
+			->with('authors', $authors);
 		}
+	}
+
+	public function deleteauthor($id) {
+
+		DB::table('authors')->where('id', $id)->delete();
+
+		$authors = DB::table('authors')->get();
+		DB::disconnect('authors');
+
+		return view('page4')
+			->with('authors', $authors);
+
 	}
 }
 
