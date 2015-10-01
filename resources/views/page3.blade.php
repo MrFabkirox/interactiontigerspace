@@ -26,7 +26,7 @@
 					<p id="message">{{ Session::get('message') }} </p>
 				@endif
 
-				{{ date('Y') }}
+				{{ date('Y, M, d') }}
 
 			</div><!--/.col-xs-6.col-lg-4-->
             
