@@ -29,11 +29,11 @@
 
 				<h2>page 2</h2>
 
-				<form method="POST">
-					<input name="name" type="text" placeholder="name" />
+				<form method="POST" action="http://localhost:8000/page2postp2">
+					<input id="name" name="name" type="text" placeholder="name" />
 					<input name="city" type="text" placeholder="city" />
 					<input type="hidden" name="_token" value="{{ csrf_token() }}" />
-					<input type="submit" value="say it" />
+					<button type="submit">say it</button>
 				</form>
 
 

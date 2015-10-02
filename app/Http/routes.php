@@ -19,7 +19,7 @@ Route::get('/', [
 Route::get('/page1', array('uses' => 'Page1Controller@p1'));
 
 Route::get('/page2', 'Page2Controller@p2');
-Route::post('/page2', 'Page2Controller@postp2');
+Route::post('/page2postp2', 'Page2Controller@postp2');
 
 Route::get('/page3', function () {
     return view('page3');

@@ -24,7 +24,8 @@ class Page4Request extends Request
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:4|max:20',
+            'bio' => 'required|min:10|max:300'
         ];
     }
 }

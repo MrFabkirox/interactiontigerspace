@@ -44,7 +44,15 @@
                 {!! Form::close() !!}
 
               </p>
-
+              <p>
+                @if ($errors)
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                @endif
+              </p>
             </div><!--/.col-xs-6.col-lg-4-->
             
           </div><!--/row-->

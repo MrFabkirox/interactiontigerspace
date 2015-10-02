@@ -6,6 +6,8 @@ namespace interactiontigerspace\Http\Controllers;
 
 use interactiontigerspace\Http\Requests\Page2Request;
 
+use Input;
+
 class Page2Controller extends Controller
 
 {
@@ -16,8 +18,12 @@ class Page2Controller extends Controller
 		return view('page2');
 	}
 
-	public function postp2(Page2Request $r) {
-		echo "Welcome ".\Input::get('name')." from ".\Input::get('city');
+	public function postp2() {
+
+		$stuff = Input::get('name');
+		return view('page2back')
+			->with('stuff', $stuff);
+
 	}
 
 }

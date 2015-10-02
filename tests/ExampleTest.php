@@ -14,6 +14,15 @@ class ExampleTest extends TestCase
     public function testBasicExample()
     {
         $this->visit('/')
-             ->see('Laravel 5');
+             ->see('Due to my current interrest to php');
+    }
+
+    public function testForm()
+    {
+        $this->visit('/page2')
+             ->type('something', '#name')
+             ->press('say it')
+             ->see('something')
+             ->onPage('/page2back');
     }
 }
