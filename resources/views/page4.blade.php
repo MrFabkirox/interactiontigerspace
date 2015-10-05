@@ -1,5 +1,7 @@
 @extends('templates.default')
 
+@section('title', 'databases')
+
 @section('content')
 
 <div class="container">

@@ -40,22 +40,19 @@ class Page4Controller extends Controller {
 		return view('page4new');
 	}
 
-	public function createuser() {
+	public function createuser(Page4Request $r) {
 		$validation = authors::validate(Input::all());
 
 		if($validation->fails()) {
 			return Redirect::to_route('newuser')->with_errors($validation)
 				->with_input();
 		} else {
-			//authors::create(array(
-			//	'name' =>Input::get('name')
-			//));
 			DB::table('authors')->insertGetId(array(
 				'name' => Input::get('name'),
 				'bio' => Input::get('bio')
 			));
 
-		$authors = DB::table('authors')->get();
+			$authors = DB::table('authors')->get();
 
 		return view('page4')
 			->with('authors', $authors);
@@ -72,7 +69,7 @@ class Page4Controller extends Controller {
 
 	}
 
-	public function updateauthor($id) {
+	public function updateauthor(Page4Request $r, $id) {
 		//$id = Input::get('id');
 		$authornew = DB::table('authors')->find($id);//return an object
 
@@ -104,4 +101,3 @@ class Page4Controller extends Controller {
 
 	}
 }
-

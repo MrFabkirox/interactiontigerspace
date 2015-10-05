@@ -1,5 +1,7 @@
 @extends('templates.default')
 
+@section('title', 'blade layout')
+
 @section('content')
 
 <div class="container">

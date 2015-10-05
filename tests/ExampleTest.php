@@ -23,6 +23,6 @@ class ExampleTest extends TestCase
              ->type('something', '#name')
              ->press('say it')
              ->see('something')
-             ->onPage('/page2back');
+             ->onPage('/page2postp2');
     }
 }

@@ -1,5 +1,7 @@
 @extends('templates.default')
 
+@section('title', 'form validation')
+
 @section('content')
 
 	
@@ -29,12 +31,31 @@
 
 				<h2>page 2</h2>
 
-				<form method="POST" action="http://localhost:8000/page2postp2">
+				<!-- <form method="POST" action="http://localhost:8000/page2postp2">
 					<input id="name" name="name" type="text" placeholder="name" />
 					<input name="city" type="text" placeholder="city" />
 					<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 					<button type="submit">say it</button>
-				</form>
+				</form> -->
+
+				
+{!! Form::open(array('url' => 'page2postp2', 'method' => 'POST')) !!}
+                
+        <p>
+        {!! Form::label('name', 'Name:') !!}
+        {!! Form::text('name') !!}
+        </p>
+
+        <p>
+        {!! Form::label('city', 'City:') !!}
+        {!! Form::text('city') !!}
+        </p>
+
+        <p>
+        {!! Form::submit('say it') !!}
+        </p>
+
+{!! Form::close() !!}
 
 
 			</div><!--/.col-xs-6.col-lg-4-->
