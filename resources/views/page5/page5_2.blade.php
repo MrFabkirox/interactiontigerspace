@@ -1,6 +1,6 @@
 @extends('templates.default')
 
-@section('title', 'variable')
+@section('title', 'variable2')
 
 @section('content')
 
@@ -13,20 +13,17 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
           <div class="jumbotron">
-            <h1>Quotes</h1>
-            <p>Some quotes are quite interresting, coming from great men,
-            or great movies, let's list them all here !<br />
-            Be my guest in making this list grow by adding some.</p>
+            <h1>Variables</h1>
+            <p>1 different way to give back variables from the controller. <br />
+            To be used soon to make more interresting things here.</p>
             </div>
           <div class="row">
            
             <div class="col-xs-6 col-lg-4">
-              
-              <p style='font-weight: bold'>List of quotes</p>
-              
+
               <p>
-              The quotes.<br />
-              <a href='{!! URL::route("page1_2") !!}'>quotes_2</a>
+                Retreive variable from the route file :<br />
+                {{ $valeur1 }}, {{ $valeur2 }}
               </p>
 
             </div><!--/.col-xs-6.col-lg-4-->

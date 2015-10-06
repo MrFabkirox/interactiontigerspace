@@ -17,6 +17,10 @@ Route::get('/', [
 ]);
 
 Route::get('/page1', array('uses' => 'Page1Controller@p1'));
+Route::get('/page1_2', [
+	'as' => 'page1_2',
+	'uses' => 'Page1Controller@p1_2'
+]);
 
 Route::get('/page2', 'Page2Controller@p2');
 Route::post('/page2postp2', 'Page2Controller@postp2');
@@ -57,4 +61,10 @@ Route::post('/page4update/{id}', [
 Route::get('/page4delete/{id}', [
 	'as' => 'deleteauthor',
 	'uses' => 'Page4Controller@deleteauthor'
+]);
+
+Route::get('/page5', array('uses' => 'Page5Controller@p5_1'));
+Route::get('/page5_2', [
+	'as' => 'page5_2',
+	'uses' => 'Page5Controller@p5_2'
 ]);

@@ -20,4 +20,12 @@ class Page1Controller extends Controller {
 		return $view;
 	}
 
+	public function p1_2() {
+
+		return view('page1.page1_2', [
+			'valeur1' => 'value1',
+			'valeur2' => 'value2'
+		]);
+	}
+
 }
