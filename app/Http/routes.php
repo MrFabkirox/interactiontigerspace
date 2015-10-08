@@ -16,10 +16,14 @@ Route::get('/', [
 	'uses' => 'HomeController@index'
 ]);
 
-Route::get('/page1', array('uses' => 'Page1Controller@p1'));
-Route::get('/page1_2', [
-	'as' => 'page1_2',
-	'uses' => 'Page1Controller@p1_2'
+Route::get('/page1/{id?}', [
+	'as' => 'page1',
+	'uses' => 'Page1Controller@p1'
+]);
+
+Route::post('/addquote', [
+	'as' => 'addquote',
+	'uses' => 'Page1Controller@p1_addquote'
 ]);
 
 Route::get('/page2', 'Page2Controller@p2');
