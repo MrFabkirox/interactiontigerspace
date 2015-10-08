@@ -1,3 +1,8 @@
 .TextWrap1 {
   float: right;
 }
+
+.QuoteFrom {
+	font-style:italic;
+	font-size:x-small;
+}

@@ -1,9 +1,12 @@
 <?php
 
-// /var/www/html/laravel3/app/Http/Controllers/Page1Controller.php
-
 namespace interactiontigerspace\Http\Controllers;
 
+use interactiontigerspace\Http\Requests\Page1Request;
+use interactiontigerspace\Http\Models\Quote;
+
+use DB;
+use Input;
 
 class Page1Controller extends Controller {
 
@@ -11,21 +14,40 @@ class Page1Controller extends Controller {
 
 	public function p1() {
 
-		//instead of View::make() in L5 you can call view() as a function
-		$view = view('page1.page1', array('name' => 'fabrice'))
-			->with('age' , '33') ;
-		$view->location = 'Paris';
-		$view['specialty'] = 'php';
+		$quote = DB::table('quotes4')->get();//return an object
+		DB::disconnect('quotes4');
 
-		return $view;
+		return view('page1.page1')
+			->with('quote', $quote);
+
 	}
 
-	public function p1_2() {
+	public function p1_addquote(Page1Request $r) {
 
-		return view('page1.page1_2', [
-			'valeur1' => 'value1',
-			'valeur2' => 'value2'
-		]);
+		DB::table('quotes4')->insertGetId(array(
+			'name' => Input::get('name'),
+			'origin' => Input::get('from'),
+			'quote' => Input::get('quote'),
+			'updated_at' => 'now',
+			'created_at' => 'now',
+
+
+		));
+
+		$quotes = DB::table('quotes4')->get();
+		DB::disconnect('quotes4');
+
+		return view('page1.page1')
+			->with('quote', $quotes);
 	}
 
+	public function viewquote($id) {
+
+		$quote = DB::table('quotes4')->find($id);//return an object
+		DB::disconnect('quotes4');
+
+		return view('page1.page1')
+			->with('quote', $quote);
+
+	}
 }
