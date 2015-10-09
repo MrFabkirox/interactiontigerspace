@@ -72,3 +72,13 @@ Route::get('/page5_2', [
 	'as' => 'page5_2',
 	'uses' => 'Page5Controller@p5_2'
 ]);
+
+Route::get('/p6_new', [
+	'as' => 'newPost',
+	'uses' => 'Page6Controller@newPost'
+]);
+
+Route::post('/p6_new', [
+	'as' => 'createPost',
+	'uses' => 'Page6Controller@createPost'
+]);

@@ -15,15 +15,15 @@ class AddAuthors extends Migration
         DB::table('authors')->insert(array(
             'name' => 'Fabrice',
             'bio' =>'A great one.',
-            'created_at'=>date('Y-m-d H:m:s'),
-            'updated_at'=>date('Y-m-d H:m:s')
+            //'created_at'=>date('Y-m-d H:m:s'),
+            //'updated_at'=>date('Y-m-d H:m:s')
         ));
 
         DB::table('authors')->insert(array(
             'name' => 'Toto',
             'bio' =>'An other great one.',
-            'created_at'=>date('Y-m-d H:m:s'),
-            'updated_at'=>date('Y-m-d H:m:s')
+            //'created_at'=>date('Y-m-d H:m:s'),
+            //'updated_at'=>date('Y-m-d H:m:s')
         ));
     }
 

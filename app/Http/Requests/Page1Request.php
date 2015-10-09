@@ -24,7 +24,7 @@ class Page1Request extends Request
     public function rules()
     {
         return [
-            'name' => 'required|min:4|max:30',
+            'name' => 'required|min:3|max:30',
             'from' => 'required|min:4|max:30',
             'quote' => 'required|min:4|max:300',
         ];
