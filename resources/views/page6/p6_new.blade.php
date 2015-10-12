@@ -21,15 +21,18 @@
            
             <div class="col-xs-6 col-lg-4">
               
-              <form action="{{ URL::route('createPost') }}" method="post">
+              <p>
+                <form action="{{ URL::route('createPost') }}" method="post">
 
-                <input name="title" type="text" placeholder="Title" />
-                <textarea name="content" placeholder="Write content of the post here"></textarea><br />
+                  <p><input name="title" type="text" placeholder="Title" /></p>
+                  <p><textarea name="content" placeholder="Write content of the post here"
+                    rows="6" cols="50"></textarea></p>
 
-                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <input type="submit" />
+                  <p><input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                  <input type="submit" /></p>
                 
-              </form>
+                </form>
+              </p>
 
             </div><!--/.col-xs-6.col-lg-4-->
 

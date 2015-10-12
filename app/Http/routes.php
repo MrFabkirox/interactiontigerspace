@@ -73,12 +73,22 @@ Route::get('/page5_2', [
 	'uses' => 'Page5Controller@p5_2'
 ]);
 
-Route::get('/p6_new', [
+Route::get('/newPost', [
 	'as' => 'newPost',
-	'uses' => 'Page6Controller@newPost'
+	'uses' => 'Page6Controller@p6_newPost'
 ]);
 
-Route::post('/p6_new', [
+Route::post('/newPost', [
 	'as' => 'createPost',
-	'uses' => 'Page6Controller@createPost'
+	'uses' => 'Page6Controller@p6_createPost'
+]);
+
+Route::get('/viewPost/{id}', [
+	'as' => 'viewPost',
+	'uses' => 'Page6Controller@p6_viewPost'
+]);
+
+Route::get('/blog', [
+	'as' => 'blog',
+	'uses' => 'Page6Controller@p6_blog'
 ]);
