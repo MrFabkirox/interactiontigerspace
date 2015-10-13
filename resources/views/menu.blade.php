@@ -8,7 +8,7 @@
             <a href="http://interactiontigerspace.herokuapp.com/page3" class="list-group-item">3, blade layout</a>
             <a href="http://interactiontigerspace.herokuapp.com/page4" class="list-group-item">4, databases</a>
             <a href="http://interactiontigerspace.herokuapp.com/page5" class="list-group-item">5, variables</a>
-            <a href="http://interactiontigerspace.herokuapp.com/blog" class="list-group-item">6, blog</a>
+            <a href="http://interactiontigerspace.herokuapp.com/page6" class="list-group-item">6, blog</a>
           </div>
         </div><!--/.sidebar-offcanvas-->
       </div><!--/row-->

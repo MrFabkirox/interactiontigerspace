@@ -31,12 +31,16 @@ class Page6Controller extends Controller {
 
         $post = Post::findOrFail($id);
         return view("page6.p6_view")
+
             ->with('postz', $post);
     }
 
     public function p6_blog() {
 
-        return view('page6.p6_blog');
+        $post = Post::all();
+
+        return view('page6.p6_blog')
+            ->with('postz', $post);
     }
 
 }

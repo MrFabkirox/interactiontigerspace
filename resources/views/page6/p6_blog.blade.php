@@ -20,7 +20,21 @@
            
             <div class="col-xs-6 col-lg-4">
               
-              p6_blog
+              <p>p6_blog</p>
+
+              <p>
+
+                @foreach($postz as $p)
+                  @include('page6.partialviewpost', array('post' => $p))
+                @endforeach
+
+              </p>
+
+            </div><!--/.col-xs-6.col-lg-4-->
+
+            <div class="col-xs-6 col-lg-4">
+
+              <p><a href="{{ URL::route('createPost') }}"> Create Post </a></p>
 
             </div><!--/.col-xs-6.col-lg-4-->
 

@@ -88,7 +88,7 @@ Route::get('/viewPost/{id}', [
 	'uses' => 'Page6Controller@p6_viewPost'
 ]);
 
-Route::get('/blog', [
+Route::get('/page6', [
 	'as' => 'blog',
 	'uses' => 'Page6Controller@p6_blog'
 ]);
