@@ -20,9 +20,9 @@ class Page6Controller extends Controller {
 
     public function p6_createPost(Request $request) {
 
-        $post = DB::table('posts5')->insertGetId(array(
-            'name' => Input::get('name'),
-            'bio' => Input::get('bio'),
+        $post = DB::table('interaction_posts')->insertGetId(array(
+            'title' => Input::get('title'),
+            'content' => Input::get('content'),
             'updated_at' => 'now',
             'created_at' => 'now'
         ));
@@ -32,7 +32,7 @@ class Page6Controller extends Controller {
 
     public function p6_viewPost($id) {
 
-        $quote = DB::table('quotes4')->find($id);
+        $quote = DB::table('interaction_posts')->find($id);
 
         return view("page6.p6_view")
             ->with('postz', $post);
@@ -40,7 +40,7 @@ class Page6Controller extends Controller {
 
     public function p6_blog() {
 
-        $post = DB::table('posts5')->get();
+        $post = DB::table('interaction_posts')->get();
 
         return view('page6.p6_blog')
             ->with('postz', $post);

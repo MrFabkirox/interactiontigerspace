@@ -24,8 +24,8 @@
               <p>
                 <form action="{{ URL::route('createPost') }}" method="post">
 
-                  <p><input name="name" type="text" placeholder="Name" /></p>
-                  <p><textarea name="bio" placeholder="Write bio of the post here"
+                  <p><input name="title" type="text" placeholder="Title" /></p>
+                  <p><textarea name="content" placeholder="Write the content of the post here"
                     rows="6" cols="50"></textarea></p>
 
                   <p><input type="hidden" name="_token" value="{{ csrf_token() }}" />
