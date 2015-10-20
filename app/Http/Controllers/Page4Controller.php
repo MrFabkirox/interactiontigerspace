@@ -22,7 +22,7 @@ class Page4Controller extends Controller {
 		$authors = DB::table('authors')->get();
 		DB::disconnect('authors');
 		
-		return view('page4')
+		return view('page4.page4')
 			->with('title', 'Some db stuff')
 			->with('authors', $authors);
 	}
@@ -32,12 +32,12 @@ class Page4Controller extends Controller {
 		$author = DB::table('authors')->find($id);//return an object
 		DB::disconnect('authors');
 
-		return view('page4view')
+		return view('page4.page4view')
 			->with('author', $author);
 	}
 
 	public function newuser() {
-		return view('page4new');
+		return view('page4.page4new');
 	}
 
 	public function createuser(Page4Request $r) {
@@ -54,7 +54,7 @@ class Page4Controller extends Controller {
 
 			$authors = DB::table('authors')->get();
 
-		return view('page4')
+		return view('page4.page4')
 			->with('authors', $authors);
 		}
 	}
@@ -64,7 +64,7 @@ class Page4Controller extends Controller {
 		$author = DB::table('authors')->find($id);//return an object
 		DB::disconnect('authors');
 
-		return view('page4edit')
+		return view('page4.page4edit')
 			->with('author', $author);
 
 	}
@@ -84,7 +84,7 @@ class Page4Controller extends Controller {
 
 			DB::disconnect('authors');
 
-		return view('page4')
+		return view('page4.page4')
 			->with('authors', $authors);
 		}
 	}
@@ -96,7 +96,7 @@ class Page4Controller extends Controller {
 		$authors = DB::table('authors')->get();
 		DB::disconnect('authors');
 
-		return view('page4')
+		return view('page4.page4')
 			->with('authors', $authors);
 
 	}

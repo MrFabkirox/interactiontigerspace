@@ -15,13 +15,13 @@ class Page2Controller extends Controller
 	public function p2() {
 
 		//instead of View::make() in L5 you can call view() as a function
-		return view('page2');
+		return view('page2.page2');
 	}
 
 	public function postp2() {
 
 		$stuff = Input::get('name');
-		return view('page2back')
+		return view('page2.page2back')
 			->with('stuff', $stuff);
 
 	}
