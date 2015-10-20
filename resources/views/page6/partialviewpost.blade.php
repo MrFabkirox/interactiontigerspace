@@ -1,10 +1,10 @@
 
-              <h3>{{ $post->title }}</h3>
+              <h3>{{ $post->name }}</h3>
 
               <p>
-                {{ $post->content }}
+                {{ $post->bio }}
               </p>
 
               <p>
-                {{ $post->created_at->diffForHumans() }}
+                {{ $post->created_at }}
               </p>
