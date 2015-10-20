@@ -21,7 +21,7 @@
            
             <div class="col-xs-6 col-lg-4">
               
-              <h3>{{ $postz->title }}</h3>
+              <h3>{{ $postz->title }}.</h3>
 
               <p>
                 @include('page6.partialviewpost', array('post' => $postz))
