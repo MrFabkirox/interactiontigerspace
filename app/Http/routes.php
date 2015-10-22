@@ -34,6 +34,11 @@ Route::get('/page3', array(
 	'uses' => 'Page3Controller@getIndex'
 ));
 
+Route::post('/page3addCategory', array(
+	'as' => 'addCategory',
+	'uses' => 'Page3Controller@p3_addCategory'
+));
+
 Route::get('/page4', [
 	'as' => 'page4',
 	'uses' => 'Page4Controller@p4'

@@ -7,6 +7,9 @@ use interactiontigerspace\Http\Requests;
 use interactiontigerspace\Http\Controllers\Controller;
 use interactiontigerspace\Http\Models\Category;
 
+use Input;
+use Redirect;
+
 class Page3Controller extends Controller
 {
     public function __construct() {
@@ -18,16 +21,16 @@ class Page3Controller extends Controller
             ->with('categories', Category::all());
     }
 
-    public function postCreate() {
-        $validator = Validator::make(Input::all(), Category::$rules);
+    public function p3_addCategory() {
+        //$validator = Validator::make(Input::all(), Category::$rules);
 
-        if($validator->passes()) {
+        //if($validator->passes()) {
             $category = new Category;
             $category->name = Input::get('name');
             $category->save();
 
             return Redirect::route('pag3')
                 ->with('message', 'category Created');
-        }
+        //}
     }
 }

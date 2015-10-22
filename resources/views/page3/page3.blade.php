@@ -44,7 +44,7 @@
               {!! $cat-> name !!} - 
               {!! Form::open(array('url'=>'admin/categories/destroy',
                 'class'=>'form-inline')) !!}
-              {!! Form::hidden('id', $category->id) !!}
+              {!! Form::hidden('id', $cat->id) !!}
               {!! Form::submit('delete') !!}
               {!! Form::close() !!}
             </li>
@@ -54,7 +54,7 @@
 
         <div class="col-xs-6 col-lg-4">
 
-          {!! Form::open(array('url'=>'admin/categories/create')) !!}
+          {!! Form::open(array('url'=>'page3addCategory', 'method'=>'POST')) !!}
           {!! Form::label('name') !!}
           {!! Form::text('name') !!}
           {!! Form::submit('create') !!}
