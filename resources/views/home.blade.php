@@ -19,7 +19,9 @@
              opportunities for great new project, and meet new great people 
              and environment i am sure.<br />
              My goal is to move forward on development, and you will find here some of my recent professionnal work experiences.
-            	Don't hesitate to reach me out on <a href="http://www.viadeo.com/profile/0021ovjeecl5pbnk">Viadeo</a> if anything.</p>
+            	Don't hesitate to reach me out on
+              <a href="https://fr.linkedin.com/pub/fabrice-esope/36/365/7b7">LinkedIn</a> or 
+              <a href="http://www.viadeo.com/profile/0021ovjeecl5pbnk">Viadeo</a> if anything.</p>
           </div>
           <div class="row">
             <div class="col-xs-6 col-lg-4">
