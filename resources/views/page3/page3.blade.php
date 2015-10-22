@@ -30,7 +30,7 @@
         <div class="col-xs-6 col-lg-4">
 
 				  @if(Session::has('message'))
-					 <p id="message">{{ Session::get('message') }} </p>
+					 <p>{{ Session::get('message') }} </p>
 				  @endif
 
 				  {{ date('Y, M, d') }}
@@ -38,6 +38,28 @@
         </div><!--/.col-xs-6.col-lg-4-->
 
         <div class="col-xs-6 col-lg-4">
+
+          @foreach($categories as $cat)
+            <li>
+              {!! $cat-> name !!} - 
+              {!! Form::open(array('url'=>'admin/categories/destroy',
+                'class'=>'form-inline')) !!}
+              {!! Form::hidden('id', $category->id) !!}
+              {!! Form::submit('delete') !!}
+              {!! Form::close() !!}
+            </li>
+          @endforeach
+
+        </div><!--/.col-xs-6.col-lg-4-->
+
+        <div class="col-xs-6 col-lg-4">
+
+          {!! Form::open(array('url'=>'admin/categories/create')) !!}
+          {!! Form::label('name') !!}
+          {!! Form::text('name') !!}
+          {!! Form::submit('create') !!}
+          {!! Form::close() !!}
+
         </div><!--/.col-xs-6.col-lg-4-->
             
       </div><!--/row-->
