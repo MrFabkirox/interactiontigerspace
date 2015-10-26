@@ -141,6 +141,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -206,6 +207,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Form' => Illuminate\Html\FormFacade::class,
         'HTML' => Illuminate\Html\FormFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

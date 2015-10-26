@@ -29,15 +29,7 @@ Route::post('/addquote', [
 Route::get('/page2', 'Page2Controller@p2');
 Route::post('/page2postp2', 'Page2Controller@postp2');
 
-Route::get('/page3', array(
-	'as' => 'pag3',
-	'uses' => 'Page3Controller@getIndex'
-));
-
-Route::post('/page3addCategory', array(
-	'as' => 'addCategory',
-	'uses' => 'Page3Controller@p3_addCategory'
-));
+Route::controller('page3/adminCategories', 'Page3Controller');
 
 Route::get('/page4', [
 	'as' => 'page4',

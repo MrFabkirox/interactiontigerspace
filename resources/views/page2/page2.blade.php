@@ -19,7 +19,7 @@
           A clear and organized view in my mind, is to have a summerized amount of key words. 
           I will list some of them here concerning the creation of this website.<br />
           The goal of this website is to improve my skill in the PHP Laravel framework, but that doesn't keep me
-          from exploring some ideas of usefull features i could hopefully think of and develop.<br />
+          from exploring some ideas of useful features i could hopefully think of and develop.<br />
           I will then summerize here all the technical key words i use here, to make lighter the other part of the website.
         </p>
       </div>

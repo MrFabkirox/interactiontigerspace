@@ -21,7 +21,7 @@ class Page3Controller extends Controller
             ->with('categories', Category::all());
     }
 
-    public function p3_addCategory() {
+    public function postCreate() {
         //$validator = Validator::make(Input::all(), Category::$rules);
 
         //if($validator->passes()) {
@@ -29,8 +29,18 @@ class Page3Controller extends Controller
             $category->name = Input::get('name');
             $category->save();
 
-            return Redirect::route('pag3')
+            return Redirect::to('page3/adminCategories/')
                 ->with('message', 'category Created');
         //}
+    }
+
+    public function postDestroy() {
+
+        $category = Category::find(Input::get('id'));
+        $category->delete();
+
+        return Redirect::to('page3/adminCategories/')
+            ->with('message', 'category Deleted');
+        
     }
 }
