@@ -12,6 +12,7 @@ use Input;
 use Redirect;
 use Validator;
 use Image;
+use File;
 
 class Page3ControllerProduct extends Controller {
 
@@ -56,7 +57,7 @@ class Page3ControllerProduct extends Controller {
     public function postDestroy() {
 
         $prod = Product::find(Input::get('id'));
-        File::delete('public/'.$product->image);
+        File::delete('public/'.$prod->image);
         $prod->delete();
 
         return Redirect::to('page3/products/')
