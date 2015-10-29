@@ -28,24 +28,47 @@
       <div class="row">
 
         <div class="col-xs-6 col-lg-4">
+<p>
+          {!! Form::open(array('url'=>'page3/products/create', 'files'=>true)) !!}<br />
+          <p>{!! Form::select('category_id', $categories) !!}</p>
 
-          {!! Form::open(array('url'=>'page3/adminCategories/create')) !!}
-          {!! Form::label('Category Name') !!}
-          {!! Form::text('name') !!}
-          {!! Form::submit('create') !!}
-          {!! Form::close() !!}
+          <p>{!! Form::text('title',null , array(
+            'placeholder'=>'Title')) !!}</p>
+
+          <p>{!! Form::textarea('description',null , array(
+            'placeholder'=>'Description','size' => '35x5')) !!}</p>
+          
+          <p>{!! Form::text('price',null , array(
+            'placeholder'=>'Rough value')) !!}</p>
+
+          <p>{!! Form::label('image', 'Choose an image') !!}
+          {!! Form::file('image') !!}</p>
+
+          <p>{!! Form::submit('create Product') !!}</p>
+          {!! Form::close() !!}</p>
+</p>
 
         </div><!--/.col-xs-6.col-lg-4-->
 
         <div class="col-xs-6 col-lg-4">
 
-          @foreach($categories as $cat)
+          @foreach($products as $prod)
             <li>
-              {!! $cat-> name !!} - 
-          {!! Form::open(array('url'=>'page3/adminCategories/destroy')) !!}
-              {!! Form::hidden('id', $cat->id) !!}
+            	{!! HTML::image($prod->image, $prod->title, array('width'=>'50')) !!}
+              {!! $prod-> title !!} - 
+          {!! Form::open(array('url'=>'page3/products/destroy')) !!}
+              {!! Form::hidden('id', $prod->id) !!}
               {!! Form::submit('delete') !!}
               {!! Form::close() !!}
+
+          {!! Form::open(array('url'=>'page3/products/toggle-availability')) !!}
+              {!! Form::hidden('id', $prod->id) !!}
+              {!! Form::select('availability', array('1'=>'In Stock', '0'=>'Out of stock'),
+              	$prod->availability) !!}
+              {!! Form::submit('update') !!}
+              {!! Form::close() !!}
+
+
             </li>
           @endforeach
 
@@ -60,6 +83,7 @@
           {{ date('Y, M, d') }}
 
         </div><!--/.col-xs-6.col-lg-4-->
+
 
             
       </div><!--/row-->

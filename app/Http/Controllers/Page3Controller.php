@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use interactiontigerspace\Http\Requests;
 use interactiontigerspace\Http\Controllers\Controller;
 use interactiontigerspace\Http\Models\Category;
+use interactiontigerspace\Http\Models\Product;
 
 use Input;
 use Redirect;
+use Validator;
 
-class Page3Controller extends Controller
-{
+class Page3Controller extends Controller {
+    
     public function __construct() {
         $this->beforeFilter('csrf', array('on'=>'post'));
     }
@@ -22,16 +24,22 @@ class Page3Controller extends Controller
     }
 
     public function postCreate() {
-        //$validator = Validator::make(Input::all(), Category::$rules);
+        $validator = Validator::make(Input::all(), Category::$rules);
 
-        //if($validator->passes()) {
+        if($validator->passes()) {
             $category = new Category;
             $category->name = Input::get('name');
             $category->save();
 
             return Redirect::to('page3/adminCategories/')
                 ->with('message', 'category Created');
-        //}
+        } else {
+
+            return Redirect::to('page3/adminCategories/')
+                ->with('message', 'Category not created')
+                ->withErrors($validator)
+                ->withInput();
+        }
     }
 
     public function postDestroy() {
