@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Quote extends Model {
 //in the view: {{ $q->created_at->diffForHumans() }} Carbon from Eloquent ko
     
-	protected $table = 'quotes4';
-	protected $fillable = array('name', 'from', 'quotes');
+	protected $table = 'interaction_quotes';
+	protected $fillable = array('name', 'origin', 'quotes');
 	
 }
