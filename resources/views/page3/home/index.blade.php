@@ -15,7 +15,7 @@
 
       <div class="jumbotron">
 
-        <h1>Defining items</h1>
+        <h1>Defining items.</h1>
         
         <p>Having interrest, passions, are most of the time linked to objects.<br />
         Those objects are linked to some usages, experiences or memories.<br />
