@@ -24,10 +24,12 @@
             "database",
             "app/Http/Controllers",
             "app/Http/Models",
-            "database/migrations"
+            "database/migrations",
+            "app/libs"
         ],
         "psr-4": {
-            "interactiontigerspace\\": "app/"
+            "interactiontigerspace\\": "app/",
+            "Availability\\": "app/libs/"
         }
     },
     "autoload-dev": {

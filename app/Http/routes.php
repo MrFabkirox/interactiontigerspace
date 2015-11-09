@@ -29,8 +29,10 @@ Route::post('/addquote', [
 Route::get('/page2', 'Page2Controller@p2');
 Route::post('/page2postp2', 'Page2Controller@postp2');
 
+Route::get('page3', array('uses'=>'Page3ControllerHome@getIndex'));
 Route::controller('page3/adminCategories', 'Page3Controller');
 Route::controller('page3/products', 'Page3ControllerProduct');
+Route::controller('home', 'Page3ControllerHome');
 
 Route::get('/page4', [
 	'as' => 'page4',

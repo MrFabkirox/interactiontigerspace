@@ -7,6 +7,7 @@ use interactiontigerspace\Http\Requests;
 use interactiontigerspace\Http\Controllers\Controller;
 use interactiontigerspace\Http\Models\Category;
 use interactiontigerspace\Http\Models\Product;
+use interactiontigerspace\app\libs\Availability;
 
 use Input;
 use Redirect;
