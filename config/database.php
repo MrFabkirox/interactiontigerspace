@@ -63,7 +63,7 @@ return [
             'prefix'    => '',
             'strict'    => false,
         ],
-        //*/
+        /*/
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'ec2-54-204-40-96.compute-1.amazonaws.com'),
@@ -75,7 +75,7 @@ return [
             'schema'   => 'public',
         ],
         //*/
-        /*/              local
+        //*/              local
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),

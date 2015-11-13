@@ -76,7 +76,8 @@
           <h3>Databases</h3>
 
           <p>
-            Switching from the MySql database of Laravel5 to the PostgreSQL of Heroku.
+            Switching from the MySql database of Laravel5 to the PostgreSQL of Heroku.<br />
+            Concerning the section 4, the databases has been created manually, that s why i used the DB class and not the model object related to the database created with the php artisan tool.
           </p>
             
         </div><!--/.col-xs-6.col-lg-4-->

@@ -19,7 +19,7 @@ class Page4Controller extends Controller {
 
 	public function p4() {
 
-		$authors = DB::table('interaction_authors')->get();
+		$authors = DB::table('authors')->get();
 		DB::disconnect('authors');
 		
 		return view('page4.page4')
@@ -29,8 +29,8 @@ class Page4Controller extends Controller {
 
 	public function viewuser($id) {
 
-		$author = DB::table('interaction_authors')->find($id);//return an object
-		DB::disconnect('interaction_authors');
+		$author = DB::table('authors')->find($id);//return an object
+		DB::disconnect('authors');
 
 		return view('page4.page4view')
 			->with('author', $author);
@@ -47,12 +47,12 @@ class Page4Controller extends Controller {
 			return Redirect::to_route('newuser')->with_errors($validation)
 				->with_input();
 		} else {
-			DB::table('interaction_authors')->insertGetId(array(
+			DB::table('authors')->insertGetId(array(
 				'name' => Input::get('name'),
 				'bio' => Input::get('bio')
 			));
 
-			$authors = DB::table('interaction_authors')->get();
+			$authors = DB::table('authors')->get();
 
 		return view('page4.page4')
 			->with('authors', $authors);
@@ -61,8 +61,8 @@ class Page4Controller extends Controller {
 
 	public function editauthor($id) {
 
-		$author = DB::table('interaction_authors')->find($id);//return an object
-		DB::disconnect('interaction_authors');
+		$author = DB::table('authors')->find($id);//return an object
+		DB::disconnect('authors');
 
 		return view('page4.page4edit')
 			->with('author', $author);
@@ -71,7 +71,7 @@ class Page4Controller extends Controller {
 
 	public function updateauthor(Page4Request $r, $id) {
 		//$id = Input::get('id');
-		$authornew = DB::table('interaction_authors')->find($id);//return an object
+		$authornew = DB::table('authors')->find($id);//return an object
 
 		$validation = authors::validate(Input::all());
 
@@ -82,7 +82,7 @@ class Page4Controller extends Controller {
 			$authornew = DB::update('update authors set name = ?', ['john']);
 			
 
-			DB::disconnect('interaction_authors');
+			DB::disconnect('authors');
 
 		return view('page4.page4')
 			->with('authors', $authors);
@@ -91,10 +91,10 @@ class Page4Controller extends Controller {
 
 	public function deleteauthor($id) {
 
-		DB::table('interaction_authors')->where('id', $id)->delete();
+		DB::table('authors')->where('id', $id)->delete();
 
-		$authors = DB::table('interaction_authors')->get();
-		DB::disconnect('interaction_authors');
+		$authors = DB::table('authors')->get();
+		DB::disconnect('authors');
 
 		return view('page4.page4')
 			->with('authors', $authors);
