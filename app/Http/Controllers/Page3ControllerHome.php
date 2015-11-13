@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use interactiontigerspace\Http\Requests;
 use interactiontigerspace\Http\Controllers\Controller;
 use interactiontigerspace\Http\Models\Product;
+use interactiontigerspace\Http\Models\User;
+
 use Availability;
 
 
@@ -19,7 +21,8 @@ class Page3ControllerHome extends Controller
 
     public function getIndex() {
         return view('page3.home.index')
-            ->with('products', Product::take(4)->orderBy('created_at', 'DESC')->get());
+            ->with('products', Product::take(4)->orderBy('created_at', 'DESC')->get())
+            ->with('usr', User::all());
     }
 
     public function getView($id) {

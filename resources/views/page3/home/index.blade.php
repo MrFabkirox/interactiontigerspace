@@ -25,6 +25,7 @@
       </div>
 
           <div class="row">
+          <div id="catnav">
            
             <div class="col-xs-6 col-lg-4">
               
@@ -47,6 +48,62 @@
 
             </div><!--/.col-xs-6.col-lg-4-->
 
+           
+            <div class="col-xs-6 col-lg-4">
+              
+              <p style='font-weight: bold'>Login</p>
+
+              <div id="user-menu">                         
+              
+                @if(Auth::check())
+
+                  <p>Welcome {{ Auth::user()->firstname }}
+                    <nav class="dropdown">
+                      <ul>
+                        <li><a href="">Sign out</a></li>
+                        <li>{!! URL::route('signout', 'Sign out') !!}</li>
+                      </ul>
+                    </nav>
+                  </p>
+
+
+                @else
+                  
+                  <p>Not logged in
+                    <nav class="dropdown" id="signin">
+                      <ul>
+                        <li><a href='{!! URL::route("newaccount") !!}'>newaccount</a></li>
+                      </ul>
+                    </nav>
+                  </p>                         
+                
+                @endif
+
+              </div>
+
+
+            </div><!--/.col-xs-6.col-lg-4-->
+           
+        <div class="col-xs-6 col-lg-4">
+          
+          <p style='font-weight: bold'>Last Items</p>
+                     
+          <p>
+
+          @foreach($usr as $u)
+
+            <h3>{{ $u->firstname }}</h3>
+            <h3>{{ $u->lastname }}</h3>
+            <h3>{{ $u->email }}</h3>
+
+
+          @endforeach
+          </p>
+
+
+        </div><!--/.col-xs-6.col-lg-4-->
+
+          </div><!--/row-->
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
 

@@ -33,6 +33,23 @@ Route::get('page3', array('uses'=>'Page3ControllerHome@getIndex'));
 Route::controller('page3/adminCategories', 'Page3Controller');
 Route::controller('page3/products', 'Page3ControllerProduct');
 Route::controller('home', 'Page3ControllerHome');
+Route::controller('users', 'UsersController');
+Route::post('page3signin', array(
+	'as'=>'signin',
+	'uses'=>'UsersController@getSignin'
+));
+Route::get('newaccount', array(
+	'as'=>'newaccount',
+	'uses'=>'UsersController@postNewaccount'
+));
+Route::post('createaccount', array(
+	'as'=>'createaccount',
+	'uses'=>'UsersController@postCreate'
+));
+Route::get('page3signout', array(
+	'as'=>'signout',
+	'uses'=>'UsersController@getSignout'
+));
 
 Route::get('/page4', [
 	'as' => 'page4',

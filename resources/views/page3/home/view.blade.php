@@ -15,7 +15,7 @@
 
       <div class="jumbotron">
 
-        <h1>Defining items, home.</h1>
+        <h1>Defining items, home</h1>
         
         <p>Having interrest, passions, are most of the time linked to objects.<br />
         Those objects are linked to some usages, experiences or memories.<br />
@@ -32,7 +32,7 @@
                           
               <p>
 
-                  <p>{{ $product->title }}</p>
+                  <p> {{ $product->title }}</p>
                   <p>{{ $product->description }}</p>
 
                   {!! HTML::image($product->image, $product->title, array('width'=>'240',
