@@ -15,7 +15,7 @@
 
       <div class="jumbotron">
 
-        <h1>Defining items.</h1>
+        <h1>Defining items, index</h1>
         
         <p>Having interrest, passions, are most of the time linked to objects.<br />
         Those objects are linked to some usages, experiences or memories.<br />
@@ -55,29 +55,25 @@
 
               <div id="user-menu">                         
               
-                @if(Auth::check())
+                <p>@if(Auth::check())
 
-                  <p>Welcome {{ Auth::user()->firstname }}
+                  Welcome {!! Auth::user()->email !!}
                     <nav class="dropdown">
                       <ul>
-                        <li><a href="">Sign out</a></li>
-                        <li>{!! URL::route('signout', 'Sign out') !!}</li>
+                        <li><a href="{!! URL::route('signout', 'Sign out') !!}">logout</a></li>
                       </ul>
                     </nav>
                   </p>
 
+                <p>@elseif(Auth::guest())
+
+                  Auth::guest
 
                 @else
-                  
-                  <p>Not logged in
-                    <nav class="dropdown" id="signin">
-                      <ul>
-                        <li><a href='{!! URL::route("newaccount") !!}'>newaccount</a></li>
-                      </ul>
-                    </nav>
-                  </p>                         
-                
-                @endif
+
+                  not connected or else
+
+                @endif</p>
 
               </div>
 
@@ -95,6 +91,7 @@
             <h3>{{ $u->firstname }}</h3>
             <h3>{{ $u->lastname }}</h3>
             <h3>{{ $u->email }}</h3>
+            <h3>{{ $u->password }}</h3>
 
 
           @endforeach
@@ -103,9 +100,35 @@
 
         </div><!--/.col-xs-6.col-lg-4-->
 
-          </div><!--/row-->
-          </div><!--/row-->
-        </div><!--/.col-xs-12.col-sm-9-->
+        <div class="col-xs-6 col-lg-4">
+
+          <li><a href='{!! URL::route("newaccount") !!}'>newaccount</a></li>
+          <li><a href='{!! URL::route("newaccount") !!}'>signin</a></li>
+          <p>
+
+          <form method="get" action="/auth/logout">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}"><br />
+           <button type="submit">Log out</button><br />
+          </form>
+
+        </p>
+
+        <p>
+
+          <form method="post" action="/auth/login">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}"><br />
+            <input type="text" name="email" value="email"><br />
+            <input type="text" name="password" value="passwod"><br />
+            <button type="submit">Log in</button><br />
+          </form>
+
+        </p>
+
+        </div><!--/.col-xs-6.col-lg-4-->
+
+
+        </div><!--/row-->
+      </div><!--/.col-xs-12.col-sm-9-->
 
 
 @stop

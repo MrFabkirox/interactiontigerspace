@@ -3,6 +3,8 @@
 namespace interactiontigerspace\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 use interactiontigerspace\Http\Requests;
 use interactiontigerspace\Http\Controllers\Controller;
@@ -14,7 +16,10 @@ use Input;
 
 class UsersController extends Controller {
 
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
     public function __construct() {
+        $this->middleware('guest',['except' => 'getLogout']);
         $this->beforeFilter('csrf', array('on'=>'post'));
     }
 
@@ -41,11 +46,9 @@ class UsersController extends Controller {
     }
 
     public function postSignin() {
-        if(Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))) {
-            return Redirect::to('/')->with('message', 'thanks signin in');
-        }
+        Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')));
 
-        return Redirect::to('users.signin')->with('message', 'email/pwd incorrect');
+            return Redirect::to('/page3')->with('message', 'thanks signin in');
     }
 
     public function getSignout() {

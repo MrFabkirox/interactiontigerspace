@@ -35,7 +35,7 @@
 
       <p>
 
-        {!! Form::open(array('url' => 'users/signin', 'method' => 'POST')) !!}
+        {!! Form::open(array('url' => 'postsignin', 'method' => 'POST')) !!}
         
         <p>
         {!! Form::text('email', Input::old('email'), array('placeholder'=>'Email',

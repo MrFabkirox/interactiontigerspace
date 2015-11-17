@@ -34,10 +34,7 @@ Route::controller('page3/adminCategories', 'Page3Controller');
 Route::controller('page3/products', 'Page3ControllerProduct');
 Route::controller('home', 'Page3ControllerHome');
 Route::controller('users', 'UsersController');
-Route::post('page3signin', array(
-	'as'=>'signin',
-	'uses'=>'UsersController@getSignin'
-));
+
 Route::get('newaccount', array(
 	'as'=>'newaccount',
 	'uses'=>'UsersController@postNewaccount'
@@ -46,10 +43,42 @@ Route::post('createaccount', array(
 	'as'=>'createaccount',
 	'uses'=>'UsersController@postCreate'
 ));
+
+
+
+Route::get('signin', array(
+	'as'=>'signin',
+	'uses'=>'UsersController@getSignin'
+));
+Route::post('postsignin', array(
+	'as'=>'postsignin',
+	'uses'=>'UsersController@postSignin'
+));
 Route::get('page3signout', array(
 	'as'=>'signout',
 	'uses'=>'UsersController@getSignout'
 ));
+
+
+
+
+Route::post('/page3/page3loggedin', function() {
+	return view('page3.page3loggedin');
+});
+
+
+
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::controllers([
+	'password' => 'Auth\PasswordController'
+]);
+
 
 Route::get('/page4', [
 	'as' => 'page4',
