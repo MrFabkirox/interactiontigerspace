@@ -67,6 +67,10 @@ Route::post('/page3/page3loggedin', function() {
 });
 
 
+Route::get('register', array(
+	'as'=>'register1',
+	'uses'=>'Auth\AuthController@getRegister'
+));
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

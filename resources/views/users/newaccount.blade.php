@@ -38,15 +38,10 @@
         {!! Form::open(array('url' => 'createaccount', 'method' => 'POST')) !!}
         
         <p>
-        {!! Form::text('firstname', Input::old('firstname'), array('placeholder'=>'Firstname',
+        {!! Form::text('name', Input::old('name'), array('placeholder'=>'name',
           'size' => '30')) !!}
         </p>
         
-        <p>
-        {!! Form::text('lastname', Input::old('lastname'), array('placeholder'=>'Lastname',
-          'size' => '30')) !!}
-        </p>
-
         <p>
         {!! Form::text('email', Input::old('email'), array('placeholder'=>'Email',
           'size' => '40x5')) !!}
@@ -54,11 +49,6 @@
 
         <p>
         {!! Form::text('password', Input::old('pwd'), array('placeholder'=>'Password',
-          'size' => '40x5')) !!}
-        </p>
-
-        <p>
-        {!! Form::text('telephone', Input::old('telephone'), array('placeholder'=>'Telephone',
           'size' => '40x5')) !!}
         </p>
 

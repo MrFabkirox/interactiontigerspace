@@ -4,63 +4,43 @@
 
 @section('content')
 
-<h2>login</h2>
 
-<form class="form-horizontal" role="form" method="POST" action="/auth/login">
-<input type="hidden" name="_token" value="{{ csrf_token() }}">
+<h2>Log In</h2>
 
-<div class="form-group">
-<label class="col-md-4 control-label">E-Mail Address</label>
-<div class="col-md-6">
-<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-</div>
-</div>
+<p>Log In into your account</p>
 
-<div class="form-group">
-<label class="col-md-4 control-label">Password</label>
-<div class="col-md-6">
-<input type="password" class="form-control" name="password">
-</div>
-</div>
+<p>
+	<form method="POST" action="/auth/login">
+		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-</div>
-</div>
-</div>
+		<p><input name="name" placeholder="Name"></p>
+		<p><input name="email" type="email" placeholder="Email"></p>
+		<p><input name="password" type="password" placeholder="Password"></p>
+		
+		<button type="submit">Register</button>
 
-<div class="form-group">
-	<div class="col-md-6 col-md-offset-4">
-	<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
-		Login
-	</button>
+	</form>
+</p>
 
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
+<p>@if(Auth::check())
 
-</div>
-</div>
-              
-                <p>@if(Auth::check())
+  Welcome 
+    <nav class="dropdown">
+      <ul>
+        <li><a href="">Sign out</a></li>
+        <li>{!! URL::route('signout', 'Sign out') !!}</li>
+      </ul>
+    </nav>
+  </p>
 
-                  Welcome 
-                    <nav class="dropdown">
-                      <ul>
-                        <li><a href="">Sign out</a></li>
-                        <li>{!! URL::route('signout', 'Sign out') !!}</li>
-                      </ul>
-                    </nav>
-                  </p>
+<p>@elseif(Auth::guest())
 
-                <p>@elseif(Auth::guest())
+  Auth::guest
 
-                  Auth::guest
+@else
 
-                @else
+  not connected or else
 
-                  not connected or else
+@endif</p>
 
-                @endif</p>
 @endsection

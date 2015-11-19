@@ -48,83 +48,30 @@
 
             </div><!--/.col-xs-6.col-lg-4-->
 
-           
             <div class="col-xs-6 col-lg-4">
+
+              <h3>Messages</h3>
               
-              <p style='font-weight: bold'>Login</p>
+              @if(Session::has('message'))
+                <p>{{ Session::get('message') }} </p>
+              @endif
 
-              <div id="user-menu">                         
-              
-                <p>@if(Auth::check())
-
-                  Welcome {!! Auth::user()->email !!}
-                    <nav class="dropdown">
-                      <ul>
-                        <li><a href="{!! URL::route('signout', 'Sign out') !!}">logout</a></li>
-                      </ul>
-                    </nav>
-                  </p>
-
-                <p>@elseif(Auth::guest())
-
-                  Auth::guest
-
-                @else
-
-                  not connected or else
-
-                @endif</p>
-
-              </div>
-
+              <p>{{ date('Y, M, d') }}</p>
 
             </div><!--/.col-xs-6.col-lg-4-->
+            
            
-        <div class="col-xs-6 col-lg-4">
-          
-          <p style='font-weight: bold'>Last Items</p>
-                     
-          <p>
+            <div class="col-xs-6 col-lg-4">
 
-          @foreach($usr as $u)
+              @if ($errors)
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              @endif
 
-            <h3>{{ $u->firstname }}</h3>
-            <h3>{{ $u->lastname }}</h3>
-            <h3>{{ $u->email }}</h3>
-            <h3>{{ $u->password }}</h3>
-
-
-          @endforeach
-          </p>
-
-
-        </div><!--/.col-xs-6.col-lg-4-->
-
-        <div class="col-xs-6 col-lg-4">
-
-          <li><a href='{!! URL::route("newaccount") !!}'>newaccount</a></li>
-          <li><a href='{!! URL::route("newaccount") !!}'>signin</a></li>
-          <p>
-
-          <form method="get" action="/auth/logout">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"><br />
-           <button type="submit">Log out</button><br />
-          </form>
-
-        </p>
-
-        <p>
-
-          <form method="post" action="/auth/login">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"><br />
-            <input type="text" name="email" value="email"><br />
-            <input type="text" name="password" value="passwod"><br />
-            <button type="submit">Log in</button><br />
-          </form>
-
-        </p>
-
-        </div><!--/.col-xs-6.col-lg-4-->
+            </div><!--/.col-xs-6.col-lg-4-->
 
 
         </div><!--/row-->

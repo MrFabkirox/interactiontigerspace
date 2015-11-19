@@ -13,7 +13,7 @@ use interactiontigerspace\Http\Models\User;
 use Auth;
 use Redirect;
 use Input;
-
+                            //not used ! AuthController used instead
 class UsersController extends Controller {
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
@@ -30,11 +30,9 @@ class UsersController extends Controller {
     public function postCreate() {
 
         $user = new User;
-        $user->firstname = Input::get('firstname');
-        $user->lastname = Input::get('lastname');
+        $user->name = Input::get('name');
         $user->email = Input::get('email');
         $user->password = Input::get('password');
-        $user->telephone = Input::get('telephone');
         $user->save();
 
         return Redirect::to('page3')
