@@ -17,7 +17,7 @@
 		<p><input name="email" type="email" placeholder="Email"></p>
 		<p><input name="password" type="password" placeholder="Password"></p>
 		
-		<button type="submit">Register</button>
+		<button type="submit">login</button>
 
 	</form>
 </p>
