@@ -34,8 +34,8 @@
 				<p>Create an account, please use a non existing email adress.</p>
 
 				<p>
-					<form method="post" action="auth/register/">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+					<form method="post" action="/auth/register/">
+            {!! csrf_field() !!}
 
 						<p><input type="text" name="name" placeholder="Name"/></p>
 						<p><input type="email" name="email" placeholder="Email"/></p>
