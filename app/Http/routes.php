@@ -57,7 +57,6 @@ Route::controller('home', 'Page3ControllerHome');
 
 
 
-
 Route::get('/page4', [
 	'as' => 'page4',
 	'uses' => 'Page4Controller@p4'

@@ -50,6 +50,13 @@
 
             <div class="col-xs-6 col-lg-4">
 
+            <a href="http://interactiontigerspace.herokuapp.com/page3/products" class="list-group-item">Create Item</a>
+            <a href="http://interactiontigerspace.herokuapp.com/page3/adminCategories" class="list-group-item">Create Categories</a>
+
+            </div><!--/.col-xs-6.col-lg-4-->
+
+            <div class="col-xs-6 col-lg-4">
+
               <h3>Messages</h3>
               
               @if(Session::has('message'))
@@ -62,6 +69,8 @@
             
            
             <div class="col-xs-6 col-lg-4">
+
+              <h3>Messages</h3>
 
               @if ($errors)
                 <ul>
