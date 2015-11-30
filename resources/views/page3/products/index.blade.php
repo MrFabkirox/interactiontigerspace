@@ -54,6 +54,7 @@
 
           @foreach($products as $prod)
             <li>
+            
             	{!! HTML::image($prod->image, $prod->title, array('width'=>'50')) !!}
               {!! $prod-> title !!} - 
           {!! Form::open(array('url'=>'page3/products/destroy')) !!}
@@ -67,7 +68,6 @@
               	$prod->availability) !!}
               {!! Form::submit('update') !!}
               {!! Form::close() !!}
-
 
             </li>
           @endforeach
