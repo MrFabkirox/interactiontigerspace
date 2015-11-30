@@ -13,7 +13,6 @@
 	<form method="POST" action="/auth/login">
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-		<p><input name="name" placeholder="Name"></p>
 		<p><input name="email" type="email" placeholder="Email"></p>
 		<p><input name="password" type="password" placeholder="Password"></p>
 		
@@ -42,5 +41,14 @@
   not connected or else
 
 @endif</p>
+
+
+<p>
+  @if(isset($messUser ))
+    {{ $name }}
+  @else
+    No messUser
+  @endif
+</p>
 
 @endsection

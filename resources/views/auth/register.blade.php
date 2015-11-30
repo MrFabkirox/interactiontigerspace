@@ -35,7 +35,7 @@
 
 				<p>
 					<form method="post" action="/auth/register/">
-            {!! csrf_field() !!}
+						<input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
 						<p><input type="text" name="name" placeholder="Name"/></p>
 						<p><input type="email" name="email" placeholder="Email"/></p>

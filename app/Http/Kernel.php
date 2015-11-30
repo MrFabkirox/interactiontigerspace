@@ -29,5 +29,6 @@ class Kernel extends HttpKernel
         'auth' => \interactiontigerspace\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \interactiontigerspace\Http\Middleware\RedirectIfAuthenticated::class,
+        'admin' => \interactiontigerspace\Http\Middleware\Admin::class,
     ];
 }

@@ -29,6 +29,6 @@ class CreateInteractionUser2Table extends Migration
      */
     public function down()
     {
-        Schema::drop('interaction_user');
+        Schema::drop('interaction_user2');
     }
 }
