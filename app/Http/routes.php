@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('admin', ['middleware' => 'admin', function(){
-	
-	return view('admin');
-	
-}]);
+Route::get('admin', [
+	'middleware' => 'admin',
+	'as' => 'admin',
+	'uses' => 'AdminController@getIndex'	
+]);
 
 
 

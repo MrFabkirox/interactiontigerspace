@@ -31,7 +31,7 @@
             <div class="col-xs-6 col-lg-4">
               <h2>2. Defining items, items</h2>
               <p>
-                {{--@foreach($products as $prod)
+                @foreach($tags as $prod)
                   <li>
                   
                     {!! HTML::image($prod->image, $prod->title, array('width'=>'50')) !!}
@@ -49,7 +49,7 @@
                     {!! Form::close() !!}
 
                   </li>
-                @endforeach--}}
+                @endforeach
               </p>
               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
@@ -71,6 +71,20 @@
               </p>
               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
+
+
+            <div class="col-xs-6 col-lg-4">
+
+            <p>
+
+            <p>test zone !!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+
+
+
+            </p>
+
+            </div><!--/.col-xs-6.col-lg-4-->
+
 
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->

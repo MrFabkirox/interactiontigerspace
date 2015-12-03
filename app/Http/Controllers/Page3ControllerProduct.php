@@ -15,10 +15,19 @@ use Validator;
 use Image;
 use File;
 
+use interactiontigerspace\Http\Controllers\FlatTagRepository;
+
 class Page3ControllerProduct extends Controller {
 
-    public function __construct() {
+    protected $tag;
+
+    public function __construct(FlatTagRepository $tag) {
         $this->beforeFilter('csrf', array('on'=>'post'));
+        $this->tag = $tag;
+
+        \View::composer(['page3.products.index', 'admin'], function($view) {
+            $view->with('tags', $this->tag->getAll());
+        });
     }
 
     public function getIndex() {
@@ -29,7 +38,6 @@ class Page3ControllerProduct extends Controller {
         }
 
         return view('page3.products.index')
-            ->with('products', Product::all())
             ->with('categories', $categories);
     }
 

@@ -28,7 +28,7 @@
            
             <div class="col-xs-6 col-lg-4">
               
-              <p style='font-weight: bold'>Defining items, home</p>
+              <p style='font-weight: bold'>Defining items, view</p>
                           
               <p>
 

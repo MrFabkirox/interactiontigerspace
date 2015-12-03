@@ -29,7 +29,7 @@
 
         <div class="col-xs-6 col-lg-4">
 <p>
-          {!! Form::open(array('url'=>'page3/products/create', 'files'=>true)) !!}<br />
+          {{-- {!! Form::open(array('url'=>'page3/products/create', 'files'=>true)) !!}<br />
           <p>{!! Form::select('category_id', $categories) !!}</p>
 
           <p>{!! Form::text('title',null , array(
@@ -45,21 +45,21 @@
           {!! Form::file('image') !!}</p>
 
           <p>{!! Form::submit('create Product') !!}</p>
-          {!! Form::close() !!}</p>
+          {!! Form::close() !!}</p> --}} FORM CREATE PRODUCT IN CATEGORY WAS HERE
 </p>
 
         </div><!--/.col-xs-6.col-lg-4-->
 
         <div class="col-xs-6 col-lg-4">
 
-          @foreach($products as $prod)
+          @foreach($tags as $prod)
             <li>
             
             	{!! HTML::image($prod->image, $prod->title, array('width'=>'50')) !!}
               {!! $prod-> title !!} - 
           {!! Form::open(array('url'=>'page3/products/destroy')) !!}
               {!! Form::hidden('id', $prod->id) !!}
-              {!! Form::submit('delete') !!}
+              
               {!! Form::close() !!}
 
           {!! Form::open(array('url'=>'page3/products/toggle-availability')) !!}
@@ -82,6 +82,9 @@
 
           {{ date('Y, M, d') }}
 
+        </div><!--/.col-xs-6.col-lg-4-->
+           
+        <div class="col-xs-6 col-lg-4">
         </div><!--/.col-xs-6.col-lg-4-->
 
 
