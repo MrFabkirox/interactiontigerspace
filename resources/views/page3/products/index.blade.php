@@ -29,7 +29,7 @@
 
         <div class="col-xs-6 col-lg-4">
 <p>
-          {{-- {!! Form::open(array('url'=>'page3/products/create', 'files'=>true)) !!}<br />
+          {!! Form::open(array('url'=>'page3/products/create', 'files'=>true)) !!}<br />
           <p>{!! Form::select('category_id', $categories) !!}</p>
 
           <p>{!! Form::text('title',null , array(
@@ -45,7 +45,7 @@
           {!! Form::file('image') !!}</p>
 
           <p>{!! Form::submit('create Product') !!}</p>
-          {!! Form::close() !!}</p> --}} FORM CREATE PRODUCT IN CATEGORY WAS HERE
+          {!! Form::close() !!}</p>
 </p>
 
         </div><!--/.col-xs-6.col-lg-4-->
@@ -59,7 +59,7 @@
               {!! $prod-> title !!} - 
           {!! Form::open(array('url'=>'page3/products/destroy')) !!}
               {!! Form::hidden('id', $prod->id) !!}
-              
+
               {!! Form::close() !!}
 
           {!! Form::open(array('url'=>'page3/products/toggle-availability')) !!}
