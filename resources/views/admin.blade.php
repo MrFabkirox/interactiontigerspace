@@ -31,7 +31,7 @@
             <div class="col-xs-6 col-lg-4">
               <h2>2. Defining items, items</h2>
               <p>
-                @foreach($tags as $prod)
+                @foreach($productTags as $prod)
                   <li>
                   
                     {!! HTML::image($prod->image, $prod->title, array('width'=>'50')) !!}
@@ -58,7 +58,7 @@
               <h2></h2>
               <p>
 
-                {{--@foreach($categories as $cat)
+                @foreach($categoryTags as $cat)
                   <li>
                     {!! $cat-> name !!} - 
                 {!! Form::open(array('url'=>'page3/adminCategories/destroy')) !!}
@@ -66,7 +66,7 @@
                     {!! Form::submit('delete') !!}
                     {!! Form::close() !!}
                   </li>
-                @endforeach--}}
+                @endforeach
 
               </p>
               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>

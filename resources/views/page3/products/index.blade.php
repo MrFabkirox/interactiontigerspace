@@ -52,7 +52,7 @@
 
         <div class="col-xs-6 col-lg-4">
 
-          @foreach($tags as $prod)
+          @foreach($productTags as $prod)
             <li>
             
             	{!! HTML::image($prod->image, $prod->title, array('width'=>'50')) !!}
@@ -71,7 +71,7 @@
 
             </li>
           @endforeach
-
+          
         </div><!--/.col-xs-6.col-lg-4-->
            
         <div class="col-xs-6 col-lg-4">

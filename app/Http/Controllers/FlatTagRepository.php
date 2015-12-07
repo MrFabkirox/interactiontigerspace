@@ -9,11 +9,17 @@ class FlatTagRepository {
 
 	public function getAll() {
 
-
-        
             $products = Product::all();
 
 		return $products;
+
+	}
+
+	public function getAll2() {
+
+			$category = Category::all();
+
+		return $category;
 
 	}
 

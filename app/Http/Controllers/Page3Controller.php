@@ -32,11 +32,11 @@ class Page3Controller extends Controller {
             $category->name = Input::get('name');
             $category->save();
 
-            return Redirect::to('page3/adminCategories/')
+            return Redirect::to('page3/categories/')
                 ->with('message', 'category Created');
         } else {
 
-            return Redirect::to('page3/adminCategories/')
+            return Redirect::to('page3/categories/')
                 ->with('message', 'Category not created')
                 ->withErrors($validator)
                 ->withInput();
@@ -48,7 +48,7 @@ class Page3Controller extends Controller {
         $category = Category::find(Input::get('id'));
         $category->delete();
 
-        return Redirect::to('page3/adminCategories/')
+        return Redirect::to('page3/categories/')
             ->with('message', 'category Deleted');
         
     }

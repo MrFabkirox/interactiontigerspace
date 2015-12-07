@@ -2,7 +2,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2015</p>
+        <p>&copy; Company {{ date('Y, M, d') }}</p>
       </footer>
 
     </div><!--/.container-->

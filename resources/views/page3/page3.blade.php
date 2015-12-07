@@ -29,22 +29,23 @@
 
         <div class="col-xs-6 col-lg-4">
 
-          {!! Form::open(array('url'=>'page3/adminCategories/create')) !!}
-          {!! Form::label('Category Name') !!}
-          {!! Form::text('name') !!}
-          {!! Form::submit('create') !!}
+          {!! Form::open(array('url'=>'page3/categories/create')) !!}
+          <p>{!! Form::label('Category Name') !!}</p>
+          <p>{!! Form::text('name') !!}</p>
+          <p>{!! Form::submit('create') !!}</p>
           {!! Form::close() !!}
 
         </div><!--/.col-xs-6.col-lg-4-->
 
         <div class="col-xs-6 col-lg-4">
 
+        <h3>Categories already available</h3>
           @foreach($categories as $cat)
             <li>
               {!! $cat-> name !!} - 
-          {!! Form::open(array('url'=>'page3/adminCategories/destroy')) !!}
+              {!! Form::open(array('url'=>'page3/categories/destroy')) !!}
               {!! Form::hidden('id', $cat->id) !!}
-              {!! Form::submit('delete') !!}
+
               {!! Form::close() !!}
             </li>
           @endforeach
@@ -57,28 +58,14 @@
            <p>{{ Session::get('message') }} </p>
           @endif
 
-          {{ date('Y, M, d') }}
 
           @if(Auth::check())
 
-                  <p>Welcome 
-                    <nav class="dropdown">
-                      <ul>
-                        <li><a href="">Sign out</a></li>
-                        <li>{!! URL::route('signout', 'Sign out') !!}</li>
-                      </ul>
-                    </nav>
-                  </p>
+          @elseif(Auth::guest())
 
-                @elseif(Auth::guest())
+          @else
 
-                  Auth::guest
-
-                @else
-
-                  not connected or else
-
-                @endif
+          @endif
 
 
         </div><!--/.col-xs-6.col-lg-4-->
