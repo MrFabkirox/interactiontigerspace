@@ -83,9 +83,23 @@
         </div><!--/.col-xs-6.col-lg-4-->
 
         <div class="col-xs-6 col-lg-4">
+
+          <h3>Login</h3>
+
+          <p>
+            Using the laravel authentification system, with the AuthController giving access to all the login methods.
+          </p>
+
         </div><!--/.col-xs-6.col-lg-4-->
 
         <div class="col-xs-6 col-lg-4">
+
+          <h3>View Composer</h3>
+
+          <p>
+            displaying the same variable in different view heritating from the same controller, is possible with the use of the view composer.
+          </p>
+
         </div><!--/.col-xs-6.col-lg-4-->
 
       </div><!--/row-->
