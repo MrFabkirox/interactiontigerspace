@@ -13,9 +13,9 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
           <div class="jumbotron">
-            <h1>Blog Post</h1>
-            <p>Some blog post<br />
-            View</p>
+            <h1>Blog</h1>
+            <p>Got anything to say ?<br />
+            Just post it !</p>
             </div>
           <div class="row">
            

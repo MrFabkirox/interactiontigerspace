@@ -13,15 +13,14 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
           <div class="jumbotron">
-            <h1>p6_blog</h1>
-            <p>p6_blog</p>
+            <h1>Blog</h1>
+            <p>Got anything to say ?<br />
+            Just post it !</p>
             </div>
           <div class="row">
            
             <div class="col-xs-6 col-lg-4">
               
-              <p>p6_blog</p>
-
               <p>
 
                 @foreach($postz as $p)
@@ -34,18 +33,20 @@
 
             <div class="col-xs-6 col-lg-4">
 
-              <p><a href="{{ URL::route('createPost') }}"> Create Post </a></p>
+              <h3><a href="{{ URL::route('createPost') }}"> Create Post </a></h3>
 
             </div><!--/.col-xs-6.col-lg-4-->
            
             <div class="col-xs-6 col-lg-4">
               
-              <p>Errors ?</p>
+              <h3>Errors, if any</h3>
 
               <p>
 
                 @if($errors->any())
                   {{ $errors->first() }}
+                @else
+                  No error.
                 @endif
 
               </p>
