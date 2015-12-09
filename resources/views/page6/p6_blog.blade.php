@@ -22,11 +22,9 @@
             <div class="col-xs-6 col-lg-4">
               
               <p>
-
                 @foreach($postz as $p)
                   @include('page6.partialviewpost', array('post' => $p))
                 @endforeach
-
               </p>
 
             </div><!--/.col-xs-6.col-lg-4-->
@@ -42,13 +40,11 @@
               <h3>Errors, if any</h3>
 
               <p>
-
                 @if($errors->any())
                   {{ $errors->first() }}
                 @else
                   No error.
                 @endif
-
               </p>
 
             </div><!--/.col-xs-6.col-lg-4-->

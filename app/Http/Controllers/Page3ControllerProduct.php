@@ -45,7 +45,7 @@ class Page3ControllerProduct extends Controller {
     public function postCreate() {
         $validator = Validator::make(Input::all(), Product::$rules);
 
-        //if($validator->passes()) {
+        if($validator->passes()) {
             $product = new Product;
             $product->category_id = Input::get('category_id');
             $product->title = Input::get('title');
@@ -61,6 +61,14 @@ class Page3ControllerProduct extends Controller {
 
             return Redirect::to('page3/products/')
                 ->with('message', 'Product Created');
+
+        } else {
+
+            return Redirect::to('page3/products/')
+                ->with('message', 'Product has not been created')
+                ->withErrors($validator->errors()->all());
+
+        }
     }
 
     public function postDestroy() {

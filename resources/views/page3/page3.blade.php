@@ -53,7 +53,7 @@
         </div><!--/.col-xs-6.col-lg-4-->
            
         <div class="col-xs-6 col-lg-4">
-
+          
           @if(Session::has('message'))
            <p>{{ Session::get('message') }} </p>
           @endif

@@ -76,15 +76,24 @@
            
         <div class="col-xs-6 col-lg-4">
 
+        <h3>Create Your item</h3>
+
           @if(Session::has('message'))
            <p>{{ Session::get('message') }} </p>
           @endif
 
-          {{ date('Y, M, d') }}
-
         </div><!--/.col-xs-6.col-lg-4-->
            
         <div class="col-xs-6 col-lg-4">
+
+          <p>
+            @if($errors->any())
+              {{ $errors->first() }}
+            @else
+              No error.
+            @endif
+          </p>
+
         </div><!--/.col-xs-6.col-lg-4-->
 
 
