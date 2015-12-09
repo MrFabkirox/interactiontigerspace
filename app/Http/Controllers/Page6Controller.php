@@ -10,6 +10,7 @@ use interactiontigerspace\Http\Models\Post5;
 use Input;
 use Redirect;
 use DB;
+use Validator;
 
 class Page6Controller extends Controller {
 
@@ -20,6 +21,17 @@ class Page6Controller extends Controller {
 
     public function p6_createPost(Request $request) {
 
+$validation = Validator::make(array(
+    'title' => Input::get('title'),
+    'content' => Input::get('content')
+    ), array(
+    'title' => 'required | unique:interaction_posts,title',
+    'content' => 'required'
+    ));
+
+    if($validation->fails()) {
+            return Redirect::route('blog')->withErrors($validation->errors()->all());
+        } else {
         $post = DB::table('interaction_posts')->insertGetId(array(
             'title' => Input::get('title'),
             'content' => Input::get('content'),
@@ -28,7 +40,7 @@ class Page6Controller extends Controller {
         ));
 
         return Redirect::route('blog');
-    }
+    }}
 
     public function p6_viewPost($id) {
 

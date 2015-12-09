@@ -37,6 +37,20 @@
               <p><a href="{{ URL::route('createPost') }}"> Create Post </a></p>
 
             </div><!--/.col-xs-6.col-lg-4-->
+           
+            <div class="col-xs-6 col-lg-4">
+              
+              <p>Errors ?</p>
+
+              <p>
+
+                @if($errors->any())
+                  {{ $errors->first() }}
+                @endif
+
+              </p>
+
+            </div><!--/.col-xs-6.col-lg-4-->
 
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
