@@ -44,8 +44,9 @@ class Page4Controller extends Controller {
 		$validation = authors::validate(Input::all());
 
 		if($validation->fails()) {
-			return Redirect::to_route('newuser')->with_errors($validation)
-				->with_input();
+			return Redirect::route('page4')
+				->withErrors($validation->errors()->all())
+            	->with('message', 'The author has not been created');
 		} else {
 			DB::table('authors')->insertGetId(array(
 				'name' => Input::get('name'),
@@ -54,8 +55,9 @@ class Page4Controller extends Controller {
 
 			$authors = DB::table('authors')->get();
 
-		return view('page4.page4')
-			->with('authors', $authors);
+		return Redirect::route('page4')
+			->with('authors', $authors)
+            ->with('message', 'The author has been created');
 		}
 	}
 
@@ -76,8 +78,9 @@ class Page4Controller extends Controller {
 		$validation = authors::validate(Input::all());
 
 		if($validation->fails()) {
-			return Redirect::to_route('newuser')->with_errors($validation)
-				->with_input();
+			return Redirect::route('page4')
+                ->with('message', 'The author has not been updated')
+				->withErrors($validation->errors()->all());
 		} else {
 			//$authornew = DB::update('update authors set name = ?', ['john']);
 			DB::table('authors')
@@ -88,9 +91,10 @@ class Page4Controller extends Controller {
 					]);
 
 		$authors = DB::table('authors')->get();
-			
-		return view('page4.page4')
-			->with('authors', $authors);
+
+		return Redirect::route('page4')
+			->with('authors', $authors)
+            ->with('message', 'The author has been updated');
 		}
 	}
 
@@ -101,8 +105,9 @@ class Page4Controller extends Controller {
 		$authors = DB::table('authors')->get();
 		DB::disconnect('authors');
 
-		return view('page4.page4')
-			->with('authors', $authors);
+		return Redirect::route('page4')
+			->with('authors', $authors)
+            ->with('message', 'The author has been deleted');
 
 	}
 }

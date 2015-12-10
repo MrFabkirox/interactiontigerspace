@@ -15,7 +15,8 @@ use Eloquent;
 		protected $fillable = array('name');
 
 		public static $rules = array(
-			'name'=>'required | min:2'
+			'name'=>'required | unique:authors,name|min:2',
+			'bio'=>'required | min:2'
 		);
 
 		public static function validate($data) {

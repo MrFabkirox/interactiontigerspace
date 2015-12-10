@@ -27,7 +27,7 @@
            
         <div class="col-xs-6 col-lg-4">
               
-          <p>We will retreive data here of the all the authors.<p />
+          <h3>List of all the authors.</h3>
           
           <p>
             <ul>
@@ -39,6 +39,24 @@
           
           <a href='{!! URL::route("newuser") !!}'>Add a new Author</a>
 
+        </div><!--/.col-xs-6.col-lg-4-->
+           
+        <div class="col-xs-6 col-lg-4">
+              
+          <h3>User Messages</h3>
+
+            @if(Session::has('message'))
+             <p>{{ Session::get('message') }} </p>
+            @endif
+
+            <p>
+              @if($errors->any())
+                {{ $errors->first() }}
+              @else
+                Feel free to add as much authors as you want!
+              @endif
+            </p>
+          
         </div><!--/.col-xs-6.col-lg-4-->
             
       </div><!--/row-->
