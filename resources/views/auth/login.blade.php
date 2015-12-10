@@ -67,32 +67,23 @@
             
             <div class="col-xs-6 col-lg-4">
             
-            <h3>User Message</h3>
+            <h3>User Messages</h3>
 
-            <p>
               @if(isset($messUser ))
-                Message user : {{ $name }}
-              @else
-                No user message for now.
+                <p>Message user : {{ $name }}</p>
               @endif
-            </p>
 
-            </div><!--/.col-xs-6.col-lg-4-->
-
-            <div class="col-xs-6 col-lg-4">
-            
-            <h3>Errors</h3>
-                      
-              @if($errors)
-                If there is.
-                <ul>
-                  @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                  @endforeach
-                </ul>
-              @else
-                No error to display
-              @endif
+              <p>
+                @if($errors)
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                @else
+                  No error to display
+                @endif
+              </p>
 
             </div><!--/.col-xs-6.col-lg-4-->
 

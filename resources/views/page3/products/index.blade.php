@@ -76,28 +76,26 @@
            
         <div class="col-xs-6 col-lg-4">
 
-        <h3>Create Your item</h3>
+          <h3>Create Your item</h3>
 
-          @if(Session::has('message'))
-           <p>{{ Session::get('message') }} </p>
-          @endif
-
-        </div><!--/.col-xs-6.col-lg-4-->
-           
-        <div class="col-xs-6 col-lg-4">
-
-          <p>
-            @if($errors->any())
-              {{ $errors->first() }}
-            @else
-              No error.
+            @if(Session::has('message'))
+             <p>{{ Session::get('message') }} </p>
             @endif
-          </p>
+
+            <p>
+              @if($errors)
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              @else
+                No error to display
+              @endif
+            </p>
 
         </div><!--/.col-xs-6.col-lg-4-->
 
-
-            
       </div><!--/row-->
 
     </div><!--/.col-xs-12.col-sm-9-->
