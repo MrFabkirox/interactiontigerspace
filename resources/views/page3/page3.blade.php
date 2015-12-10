@@ -29,6 +29,8 @@
 
         <div class="col-xs-6 col-lg-4">
 
+          <h3>Create a new category</h3>
+
           {!! Form::open(array('url'=>'page3/categories/create')) !!}
           <p>{!! Form::label('Category Name') !!}</p>
           <p>{!! Form::text('name') !!}</p>
@@ -40,6 +42,7 @@
         <div class="col-xs-6 col-lg-4">
 
         <h3>Categories already available</h3>
+
           @foreach($categories as $cat)
             <li>
               {!! $cat-> name !!} - 
@@ -53,23 +56,22 @@
         </div><!--/.col-xs-6.col-lg-4-->
            
         <div class="col-xs-6 col-lg-4">
-          
+
+        <h3>User Messages</h3>
+
           @if(Session::has('message'))
-           <p>{{ Session::get('message') }} </p>
+            <p>{{ Session::get('message') }} </p>
           @endif
 
-
-          @if(Auth::check())
-
-          @elseif(Auth::guest())
-
-          @else
-
-          @endif
-
+          <p>
+            @if($errors->any())
+              {{ $errors->first() }}
+            @else
+              Feel free to add as much category as you want!
+            @endif
+          </p>
 
         </div><!--/.col-xs-6.col-lg-4-->
-
             
       </div><!--/row-->
 
