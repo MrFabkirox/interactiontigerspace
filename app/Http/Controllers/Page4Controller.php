@@ -69,8 +69,8 @@ class Page4Controller extends Controller {
 
 	}
 
-	public function updateauthor(Page4Request $r, $id) {
-		//$id = Input::get('id');
+	public function updateauthor() {
+		$id = Input::get('id');
 		$authornew = DB::table('authors')->find($id);//return an object
 
 		$validation = authors::validate(Input::all());
@@ -79,11 +79,16 @@ class Page4Controller extends Controller {
 			return Redirect::to_route('newuser')->with_errors($validation)
 				->with_input();
 		} else {
-			$authornew = DB::update('update authors set name = ?', ['john']);
+			//$authornew = DB::update('update authors set name = ?', ['john']);
+			DB::table('authors')
+				->where('id',$id)
+				->update([
+					'name' => Input::get('name'),
+					'bio' => Input::get('bio')
+					]);
+
+		$authors = DB::table('authors')->get();
 			
-
-			DB::disconnect('authors');
-
 		return view('page4.page4')
 			->with('authors', $authors);
 		}
