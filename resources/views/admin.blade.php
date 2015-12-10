@@ -74,9 +74,17 @@
 
 
             <div class="col-xs-6 col-lg-4">
-
-            <p>
-
+              <h2>4. Authors</h2>
+            
+              <p>
+                <ul>
+                  @foreach ($authorTags as $a)
+                    <li>{{ $a->name }}</li>
+                    <a href='{!! URL::route("deleteauthor", array("id"=> "{$a->id}" )) !!}'>Delete this author</a>.<br />
+                  @endforeach 
+                </ul>
+              </p>
+              
 
             </p>
 

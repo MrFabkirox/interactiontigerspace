@@ -26,7 +26,7 @@ class Page3ControllerProduct extends Controller {
         $this->tag = $tag;
 
         \View::composer(['page3.products.index', 'admin'], function($view) {
-            $view->with('productTags', $this->tag->getAll());
+            $view->with('productTags', $this->tag->getAllProducts());
         });
     }
 

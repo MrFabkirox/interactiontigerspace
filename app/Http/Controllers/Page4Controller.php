@@ -15,6 +15,17 @@ use Recruit;
 
 class Page4Controller extends Controller {
 
+    protected $tag;
+
+    public function __construct(FlatTagRepository $tag) {
+        $this->beforeFilter('csrf', array('on'=>'post'));
+        $this->tag = $tag;
+
+        \View::composer(['page4.page4', 'admin'], function($view) {
+            $view->with('authorTags', $this->tag->getAllAuthors());
+        });
+    }
+
 	public $restful = true;
 
 	public function p4() {

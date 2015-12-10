@@ -18,8 +18,9 @@ class AdminController extends Controller {
         $this->tag = $tag;
 
         \View::composer(['page3.products.index', 'admin'], function($view) {
-            $view->with('productTags', $this->tag->getAll())
-                ->with('categoryTags', $this->tag->getAll2());
+            $view->with('productTags', $this->tag->getAllProducts())
+                ->with('categoryTags', $this->tag->getAllCategories())
+                ->with('authorTags', $this->tag->getAllAuthors());
         });
     }
 

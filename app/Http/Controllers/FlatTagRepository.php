@@ -4,10 +4,11 @@ namespace interactiontigerspace\Http\Controllers;
 
 use interactiontigerspace\Http\Models\Category;
 use interactiontigerspace\Http\Models\Product;
+use interactiontigerspace\Http\Models\authors;
 
 class FlatTagRepository {
 
-	public function getAll() {
+	public function getAllProducts() {
 
             $products = Product::all();
 
@@ -15,11 +16,19 @@ class FlatTagRepository {
 
 	}
 
-	public function getAll2() {
+	public function getAllCategories() {
 
-			$category = Category::all();
+			$categories = Category::all();
 
-		return $category;
+		return $categories;
+
+	}
+
+	public function getAllAuthors() {
+
+			$authors = authors::all();
+
+		return $authors;
 
 	}
 
